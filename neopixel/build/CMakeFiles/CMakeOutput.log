@@ -35,17 +35,17 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_15376"
-[1/2] Building C object CMakeFiles/cmTC_15376.dir/testCCompiler.c.obj
-[2/2] Linking C executable cmTC_15376
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_5e29d"
+[1/2] Building C object CMakeFiles/cmTC_5e29d.dir/testCCompiler.c.obj
+[2/2] Linking C executable cmTC_5e29d
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_29d9b"
-[1/2] Building C object CMakeFiles/cmTC_29d9b.dir/CMakeCCompilerABI.c.obj
-[2/2] Linking C executable cmTC_29d9b
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_45e4c"
+[1/2] Building C object CMakeFiles/cmTC_45e4c.dir/CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_45e4c
 Using built-in specs.
 COLLECT_GCC=C:\Users\ahmed\.espressif\tools\xtensa-esp32-elf\esp-2020r2-8.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe
 COLLECT_LTO_WRAPPER=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe
@@ -55,18 +55,18 @@ Thread model: posix
 gcc version 8.2.0 (crosstool-NG esp-2020r2) 
 COMPILER_PATH=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_29d9b'
- c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccCvB8WQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_29d9b c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_29d9b.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_29d9b'
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_45e4c'
+ c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccDzGRnh.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_45e4c c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_45e4c.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_45e4c'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_29d9b"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_29d9b.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [[2/2] Linking C executable cmTC_29d9b]
+  ignore line: [Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_45e4c"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_45e4c.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [[2/2] Linking C executable cmTC_45e4c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\Users\ahmed\.espressif\tools\xtensa-esp32-elf\esp-2020r2-8.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe]
   ignore line: [COLLECT_LTO_WRAPPER=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe]
@@ -80,27 +80,27 @@ Parsed C implicit link information from above output:
   ignore line: [LIBRARY_PATH=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/]
   ignore line: [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/]
   ignore line: [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_29d9b']
-  link line: [ c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccCvB8WQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_29d9b c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_29d9b.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_45e4c']
+  link line: [ c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccDzGRnh.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_45e4c c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_45e4c.dir/CMakeCCompilerABI.c.obj -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o]
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccCvB8WQ.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccDzGRnh.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_29d9b] ==> ignore
+    arg [cmTC_45e4c] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o] ==> ignore
     arg [-Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0] ==> dir [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0]
     arg [-Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc] ==> dir [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc]
     arg [-Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib] ==> dir [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib]
-    arg [CMakeFiles/cmTC_29d9b.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [CMakeFiles/cmTC_45e4c.dir/CMakeCCompilerABI.c.obj] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-lc] ==> lib [c]
     arg [-lnosys] ==> lib [nosys]
@@ -121,9 +121,9 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_72b51"
-[1/2] Building C object CMakeFiles/cmTC_72b51.dir/feature_tests.c.obj
-[2/2] Linking C executable cmTC_72b51
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_7b25e"
+[1/2] Building C object CMakeFiles/cmTC_7b25e.dir/feature_tests.c.obj
+[2/2] Linking C executable cmTC_7b25e
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -135,9 +135,9 @@ Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_a1dbc"
-[1/2] Building C object CMakeFiles/cmTC_a1dbc.dir/feature_tests.c.obj
-[2/2] Linking C executable cmTC_a1dbc
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_91ebf"
+[1/2] Building C object CMakeFiles/cmTC_91ebf.dir/feature_tests.c.obj
+[2/2] Linking C executable cmTC_91ebf
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -149,9 +149,9 @@ Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_70169"
-[1/2] Building C object CMakeFiles/cmTC_70169.dir/feature_tests.c.obj
-[2/2] Linking C executable cmTC_70169
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_38de4"
+[1/2] Building C object CMakeFiles/cmTC_38de4.dir/feature_tests.c.obj
+[2/2] Linking C executable cmTC_38de4
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -161,17 +161,17 @@ Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_ed44f"
-[1/2] Building CXX object CMakeFiles/cmTC_ed44f.dir/testCXXCompiler.cxx.obj
-[2/2] Linking CXX executable cmTC_ed44f
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_6135c"
+[1/2] Building CXX object CMakeFiles/cmTC_6135c.dir/testCXXCompiler.cxx.obj
+[2/2] Linking CXX executable cmTC_6135c
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_53aa5"
-[1/2] Building CXX object CMakeFiles/cmTC_53aa5.dir/CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_53aa5
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_22c53"
+[1/2] Building CXX object CMakeFiles/cmTC_22c53.dir/CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_22c53
 Using built-in specs.
 COLLECT_GCC=C:\Users\ahmed\.espressif\tools\xtensa-esp32-elf\esp-2020r2-8.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe
 COLLECT_LTO_WRAPPER=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe
@@ -181,18 +181,18 @@ Thread model: posix
 gcc version 8.2.0 (crosstool-NG esp-2020r2) 
 COMPILER_PATH=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/bin/
 LIBRARY_PATH=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/;c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_53aa5'
- c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccDRTw1P.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_53aa5 c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_53aa5.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o
-COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_53aa5'
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_22c53'
+ c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccsdunYi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_22c53 c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_22c53.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o
+COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_22c53'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_53aa5"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_53aa5.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [[2/2] Linking CXX executable cmTC_53aa5]
+  ignore line: [Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_22c53"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_22c53.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [[2/2] Linking CXX executable cmTC_22c53]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\Users\ahmed\.espressif\tools\xtensa-esp32-elf\esp-2020r2-8.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe]
   ignore line: [COLLECT_LTO_WRAPPER=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe]
@@ -206,27 +206,27 @@ Parsed CXX implicit link information from above output:
   ignore line: [LIBRARY_PATH=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/]
   ignore line: [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/]
   ignore line: [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_53aa5']
-  link line: [ c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccDRTw1P.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_53aa5 c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_53aa5.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-mlongcalls' '-Wno-frame-address' '-v' '-o' 'cmTC_22c53']
+  link line: [ c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe -plugin c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll -plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccsdunYi.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -o cmTC_22c53 c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0 -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc -Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib CMakeFiles/cmTC_22c53.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm -lgcc -lc -lnosys -lc -lgcc c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtend.o c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtn.o]
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/8.2.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccDRTw1P.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\ahmed\AppData\Local\Temp\ccsdunYi.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_53aa5] ==> ignore
+    arg [cmTC_22c53] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib/crt0.o] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crti.o] ==> ignore
     arg [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/crtbegin.o] ==> ignore
     arg [-Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0] ==> dir [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0]
     arg [-Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc] ==> dir [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc]
     arg [-Lc:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib] ==> dir [c:/users/ahmed/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/8.2.0/../../../../xtensa-esp32-elf/lib]
-    arg [CMakeFiles/cmTC_53aa5.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [CMakeFiles/cmTC_22c53.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc] ==> lib [gcc]
@@ -249,9 +249,9 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++2a] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_15530"
-[1/2] Building CXX object CMakeFiles/cmTC_15530.dir/feature_tests.cxx.obj
-[2/2] Linking CXX executable cmTC_15530
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_10dc9"
+[1/2] Building CXX object CMakeFiles/cmTC_10dc9.dir/feature_tests.cxx.obj
+[2/2] Linking CXX executable cmTC_10dc9
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -316,9 +316,9 @@ Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_
 Detecting CXX [-std=c++17] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_19597"
-[1/2] Building CXX object CMakeFiles/cmTC_19597.dir/feature_tests.cxx.obj
-[2/2] Linking CXX executable cmTC_19597
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_3c9ac"
+[1/2] Building CXX object CMakeFiles/cmTC_3c9ac.dir/feature_tests.cxx.obj
+[2/2] Linking CXX executable cmTC_3c9ac
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -383,9 +383,9 @@ Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_f24da"
-[1/2] Building CXX object CMakeFiles/cmTC_f24da.dir/feature_tests.cxx.obj
-[2/2] Linking CXX executable cmTC_f24da
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_1702c"
+[1/2] Building CXX object CMakeFiles/cmTC_1702c.dir/feature_tests.cxx.obj
+[2/2] Linking CXX executable cmTC_1702c
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -450,9 +450,9 @@ Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_5fa37"
-[1/2] Building CXX object CMakeFiles/cmTC_5fa37.dir/feature_tests.cxx.obj
-[2/2] Linking CXX executable cmTC_5fa37
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_792ed"
+[1/2] Building CXX object CMakeFiles/cmTC_792ed.dir/feature_tests.cxx.obj
+[2/2] Linking CXX executable cmTC_792ed
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -517,9 +517,9 @@ Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_216aa"
-[1/2] Building CXX object CMakeFiles/cmTC_216aa.dir/feature_tests.cxx.obj
-[2/2] Linking CXX executable cmTC_216aa
+Run Build Command:"C:/Users/ahmed/.espressif/tools/ninja/1.9.0/ninja.exe" "cmTC_ab643"
+[1/2] Building CXX object CMakeFiles/cmTC_ab643.dir/feature_tests.cxx.obj
+[2/2] Linking CXX executable cmTC_ab643
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
