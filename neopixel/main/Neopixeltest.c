@@ -86,10 +86,10 @@ void app_main(void){
     /*++++ init Neopixel driver ++++*/
     led_init();
     while(1){
-        set_led_strip_color(145,185,4,1);
+        /*set_led_strip_color(145,185,4,1);
         set_led_strip_color(145,15,54,2);
-        set_led_strip_color(45,185,54,3);
-        set_led_strip_color(105,235,94,4);
+        set_led_strip_color(45,185,54,3);*/
+        set_led_strip_color(0,0,0,4);
 
         //show new color
         led_strip_show(&led_strip);

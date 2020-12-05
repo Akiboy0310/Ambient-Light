@@ -1396,3 +1396,16 @@
 647	2178	6280032336769335	esp-idf/esp32/ld/esp32.project.ld	65606459189b6354
 2178	2986	6280032344950578	Neopixeltest.elf	bdec0d48395a61c8
 2987	3277	6280032347960494	.bin_timestamp	ed452509e78ce9ec
+109	9500	6281688328716895	build.ninja	a8fc3cef4a4f4d7f
+118	379	0	esp-idf/partition_table/CMakeFiles/partition_table	ef14c2dd7047a0f9
+379	488	6279186825259134	bootloader-prefix/src/bootloader-stamp/bootloader-build	545534a92aa3dbf6
+379	488	6279186825259134	bootloader/bootloader.elf	545534a92aa3dbf6
+379	488	6279186825259134	bootloader/bootloader.bin	545534a92aa3dbf6
+379	488	6279186825259134	bootloader/bootloader.map	545534a92aa3dbf6
+112	656	6281688336218138	esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_app_desc.c.obj	b22866ecb3eb58f3
+657	749	6281688337215465	esp-idf/app_update/libapp_update.a	72492cca38e5bd19
+121	831	6281688337903629	esp-idf/main/CMakeFiles/__idf_main.dir/Neopixeltest.c.obj	66a737eff7968a9d
+831	900	6281688338741404	esp-idf/main/libmain.a	2710147ba100b0
+901	3088	6281688360351158	esp-idf/esp32/ld/esp32.project.ld	65606459189b6354
+3089	4086	6281688370404349	Neopixeltest.elf	bdec0d48395a61c8
+4087	4449	6281688374144088	.bin_timestamp	ed452509e78ce9ec
