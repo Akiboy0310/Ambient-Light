@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ahmed/esp/components/newlib
+# Install script for directory: C:/Users/ahmed/Desktop/esp-idf-3/components/newlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

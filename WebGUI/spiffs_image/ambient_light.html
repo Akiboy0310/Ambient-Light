@@ -1,0 +1,203 @@
+<html>
+    <head>
+        <title>Ambient Light Control</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normal.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/tabby.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/slider.css">
+        <!--<script src="lib/androidc.js"></script>-->
+        <script src="lib/tabby.js"></script>
+        <script src="lib/domi18n.js"></script>
+    
+        <script src="js/const.js"></script>
+        <script src="js/lquery.js"></script>
+        <script src="js/wsutil.js"></script>
+        <script src="js/wscomm.js"></script>
+        <script src="js/esp32comm.js"></script>
+        <script src="js/mockcomm.js"></script>
+        <script src="js/tabbasic.js"></script>
+        <script src="js/tabglob.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a> Light Control</a>
+        </div>
+        <div id="menu">
+            <a href="choose_color.html" onclick="tabBasic.startDisplay()">color/scene</a>
+            <a href="set_bridness.html" onclick="tabBasic.startDisplay()">control panel</a>
+            <a href="ambient_light_settings.html" onclick="tabBasic.startDisplay()">settings</a>
+        </div>
+        <script>
+            window.onload = function () {
+                tabby.init();
+                domI18n({
+                    selector: '[data-i18n]',
+                    separator: ' // ',
+                    languages: ['en', 'de']
+                });
+                L.loadScript('js/i18n/i18n_' + L.getLang() + '.js', 'js/i18n/i18n_en.js').then(function () {
+                    L('html')[0].lang = window.lang;
+                    window.esp32 = new Esp32Comm(function () {
+                        toTab(getCurrentTabId(), true);
+                        testConnection();
+                        setInterval(function () {
+                            testConnection();
+                        }, 10000);
+                        function testConnection() {
+                            esp32.testConnection(true).then(function (isConnected) {
+                                L.setVisible('.connectedIndicator', isConnected, 'inline');
+                                L.setVisible('.disconnectedIndicator', !isConnected, 'inline');
+                                var oldState = L('#connStateText').innerHTML;
+                                var newState = isConnected ? L.translate('CONNECTED') : L.translate('NOT_CONNECTED');
+                                if(oldState != newState) {
+                                    L('#connStateText').innerHTML = newState;
+                                }
+                            });
+                        }
+                    });
+                });
+            };
+        
+            function actionAndToggle(actionFunction, argList, toggleElementList, progressBarId) {
+                return new Promise(function (resolve) {
+                    var maxProgress = 0;
+                    var stopProgressBar = false;
+                    argList = argList || [];
+                    L.toggle.apply(null, toggleElementList);
+                    var promise = actionFunction.apply(null, argList.concat(progressHandler));
+                    if (promise && promise.then) {
+                        promise.then(function () {
+                            if (progressBarId) {
+                                progressHandler(100, 100);
+                                setTimeout(function () {
+                                    stopProgressBar = true;
+                                    L(progressBarId).style = 'width: 0%;';
+                                }, 500);
+                            }
+                            L.toggle.apply(null, toggleElementList);
+                            resolve();
+                        }, function () {
+                            stopProgressBar = true;
+                        });
+                    }
+        
+                    function progressHandler(progress, timeConstant) {
+                        var startTime = L.getMs();
+                        timeConstant = timeConstant || 1000;
+                        if (progressBarId) {
+                            updateProgressBar(maxProgress);
+                        }
+        
+                        function updateProgressBar(oldPrg) {
+                            setTimeout(function () {
+                                var t = L.getMs() - startTime;
+                                var p = (progress - oldPrg) * (1 - Math.exp(-t / timeConstant)) + oldPrg;
+                                if (p > maxProgress && !stopProgressBar) {
+                                    maxProgress = p;
+                                    L(progressBarId).style = 'width: ' + p + '%;';
+                                    updateProgressBar(oldPrg);
+                                }
+                            }, 50);
+                        }
+                    }
+                });
+            }
+        
+            function toTab(tabId, nofocus) {
+                tabId = parseTabId(tabId);
+                if(!tabId) {
+                    tabId = '#tabBasic';
+                }
+                if(nofocus) {
+                    L(tabId).setAttribute('data-tab-no-focus', true);
+                }
+                tabby.toggleTab(tabId);
+                if(nofocus) {
+                    L(tabId).removeAttribute('data-tab-no-focus');
+                }
+                L.setSelected('.menubutton', false);
+                L.setSelected(tabId + 'Btn');
+                L.setVisible('#toNavLink');
+                L.setVisible('#toNavBackLink', false);
+                if(tabId != '#tabNav') {
+                    window.lastNav = tabId;
+                }
+                if (tabId.indexOf('#tabBasic') > -1) {
+                    // no actions when activating basic tab
+                } else if (tabId.indexOf('#tabGlobal') > -1) {
+                    // no actions when activating global tab
+                } else if (tabId.indexOf('#tabNav') > -1) {
+                    toNav();
+                }
+            }
+            
+            function toNav() {
+                tabby.toggleTab('#tabNav');
+                L.toggle('#toNavLink', '#toNavBackLink');
+        
+                var tabNav = L('#tabNavContainer');
+                if(tabNav.hasChildNodes()) {
+                    return;
+                }
+                var navItems = L('#menuButtons').children;
+                for (var i = 0; i < navItems.length; i++) {
+                    var clone = navItems[i].cloneNode(true);
+                    clone.className = '';
+                    tabNav.appendChild(clone);
+                }
+            }
+        
+            function toNavBack() {
+                L.toggle('#toNavLink', '#toNavBackLink');
+                if(window.lastNav && window.lastNav != '#tabNav') {
+                    toTab(window.lastNav);
+                } else {
+                    toTab('#tabBasic');
+                }
+            }
+        
+            function getCurrentTabId() {
+                if(L('.tabs-pane.active')[0]) {
+                    var id = parseTabId(L('.tabs-pane.active')[0].baseURI);
+                }
+                return id ? id : parseTabId(window.location.href);
+            }
+        
+            function parseTabId(url) {
+                var tabId = url.indexOf('#') > -1 ? url.substring(url.indexOf('#')) : '';
+                if(tabId.indexOf('?') > -1) {
+                    tabId = tabId.substring(0,tabId.indexOf('?'));
+                }
+                return tabId;
+            }
+        
+            function sliderChanged (evt) {
+                var id = evt.currentTarget.id;
+                var val = evt.currentTarget.value;
+                L('#' + id + '_VAL').innerHTML = val;
+                applyValue(id,val);
+            }
+        
+            function comboBoxSelection(select) {
+                applyValue(select.id,select.value);
+            }
+        
+            function showCheckmark (btn) {
+                L.setVisible(btn.children[1], true, 'inline');
+                setTimeout(function () {
+                    L.setVisible(btn.children[1], false);
+                }, 3000);
+            }
+        
+            function applyValue (guiElement,value,sendATCmd) {
+                sendATCmd = sendATCmd || true;
+                esp32.setConfigValue(guiElement,value,sendATCmd);
+            }
+        
+        </script>   
+
+    </body>
+
+</html>

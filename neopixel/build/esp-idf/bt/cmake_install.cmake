@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ahmed/esp/components/bt
+# Install script for directory: C:/Users/ahmed/Desktop/esp-idf-3/components/bt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

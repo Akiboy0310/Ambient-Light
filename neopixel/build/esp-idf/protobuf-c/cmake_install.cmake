@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ahmed/esp/components/protobuf-c
+# Install script for directory: C:/Users/ahmed/Desktop/esp-idf-3/components/protobuf-c
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -18,7 +18,7 @@ struct led_strip_t led_strip = {
       .rmt_channel = RMT_CHANNEL_7,
       .gpio = GPIO_NUM_32,
       .led_strip_length = LENGTH_OF_LED_STRIP,
-  };
+    };
 uint8_t led_init(void){
     neop_buf1 = malloc(sizeof(struct led_color_t)*LENGTH_OF_LED_STRIP);
     neop_buf2 = malloc(sizeof(struct led_color_t)*LENGTH_OF_LED_STRIP);
@@ -85,14 +85,14 @@ void set_led_strip_color(uint8_t r,uint8_t g, uint8_t b,uint8_t area){
 void app_main(void){ 
     /*++++ init Neopixel driver ++++*/
     led_init();
-    while(1){
-        /*set_led_strip_color(145,185,4,1);
-        set_led_strip_color(145,15,54,2);
-        set_led_strip_color(45,185,54,3);*/
-        set_led_strip_color(0,0,0,4);
+   // while(1){
+        set_led_strip_color(222*0.15,0*0.15,0*0.15,1);
+        set_led_strip_color(0*0.15,222*0.15,0*0.15,2);
+        set_led_strip_color(0*0.15,0*0.15,222*0.15,3);
+        set_led_strip_color(110*0.15,222*0.15,10*0.15,4);
 
         //show new color
         led_strip_show(&led_strip);
         vTaskDelay(1000/portTICK_PERIOD_MS); //delay 1000ms
-    }
+    //}
 }

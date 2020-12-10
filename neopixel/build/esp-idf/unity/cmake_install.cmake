@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ahmed/esp/components/unity
+# Install script for directory: C:/Users/ahmed/Desktop/esp-idf-3/components/unity
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

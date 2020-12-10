@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ahmed/esp/components/sdmmc
+# Install script for directory: C:/Users/ahmed/Desktop/esp-idf-3/components/sdmmc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
