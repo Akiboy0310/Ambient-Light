@@ -146,7 +146,7 @@ void sendTask(void *param)
     int64_t timerTicks =  esp_timer_get_time();
     while (sendTaskRunning) {
         vTaskDelay(1);
-        if (config.gain>=40){
+        if (config.onof==1){
             set_led_strip_color(20*0.15,0*0.15,220*0.15,1);
             set_led_strip_color(220*0.15,0*0.15,0*0.15,2);
             set_led_strip_color(120*0.15,160*0.15,220*0.15,3);
