@@ -26,9 +26,9 @@
             <a> Light Control</a>
         </div>
         <div id="menu">
-            <a href="choose_color.html" onclick="tabBasic.startDisplay()">color/scene</a>
-            <a href="set_bridness.html" onclick="tabBasic.startDisplay()">control panel</a>
-            <a href="ambient_light_settings.html" onclick="tabBasic.startDisplay()">settings</a>
+            <a href="choose_color.html" >color/scene</a>
+            <a href="set_bridness.html" >control panel</a>
+            <a href="ambient_light_settings.html" >settings</a>
         </div>
         <br>
         <a style="color: rgb(44, 62, 80); background-color:red;" class="button">red</a>
@@ -36,6 +36,19 @@
         <a style="color: rgb(44, 62, 80);background-color: blue;" class="button">blue</a>
         <br>
         <div class="color-picker"></div>
+        <br>
+        <div id = "red"><input type="text" id="RED"></div>
+        <div id = "green"><input type="text" id="GREEN"></div>
+        <div id = "blue"><input type="text" id="BLUE"></div>
+        <br>
+        <div id="onofbox">
+            <a>Main Switch</a>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox" id="ONOFBOX" onclick="onofChanged(event)">
+                <span class="slider round"></span>
+            </label>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
         <script>
             // Simple example, see optional options for more configuration.
@@ -83,7 +96,16 @@
             pickr.on('change', (...args) => {
                 let color = args[0].toRGBA();
                 console.log(color);
-                this.header.style.backgroundColor = `rgba(${color[0]},${color[1]},${color[2]}${color[3]})`
+                var r=color[0];
+                var g=color[1];
+                var b=color[2];
+                idr = RED.id;
+                idg = GREEN.id;
+                idb = BLUE.id;
+                applyValue (idr,r);
+                applyValue (idg,g);
+                applyValue (idb,b);
+
             });
             
             window.onload = function () {
@@ -245,6 +267,18 @@
                 setTimeout(function () {
                     L.setVisible(btn.children[1], false);
                 }, 3000);
+            }
+            function onofChanged(evt){
+                // Get the checkbox
+                var checkBox = document.getElementById(evt.currentTarget.id);
+                var id = evt.currentTarget.id;
+                var val;
+                if (checkBox.checked == true){
+                    val=1;
+                } else {
+                    val=0;
+                }
+                applyValue(id,val);
             }
 
             function applyValue (guiElement,value,sendATCmd) {

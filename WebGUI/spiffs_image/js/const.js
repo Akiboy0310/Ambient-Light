@@ -21,12 +21,18 @@ C.CMD_STOP_DATA='stop';
  * note that the WebGui has own default values because it can work "backless" in mockup mode!
 */ 
 C.CONFIG_MAPPING = [];
+C.CONFIG_MAPPING.push({ guiId: 'RED',               cmd: 'red',             value: '100' });
+C.CONFIG_MAPPING.push({ guiId: 'GREEN',             cmd: 'green',           value: '200' });
+C.CONFIG_MAPPING.push({ guiId: 'BLUE',              cmd: 'blue',            value: '50' });
 C.CONFIG_MAPPING.push({ guiId: 'AREA1ONOF',         cmd: 'area1onof',       value: '0' });
+C.CONFIG_MAPPING.push({ guiId: 'AREA2ONOF',         cmd: 'area2onof',       value: '0' });
+C.CONFIG_MAPPING.push({ guiId: 'AREA3ONOF',         cmd: 'area3onof',       value: '0' });
+C.CONFIG_MAPPING.push({ guiId: 'AREA4ONOF',         cmd: 'area4onof',       value: '0' });
 C.CONFIG_MAPPING.push({ guiId: 'ONOFBOX',           cmd: 'onof',            value: '0' }); 
 C.CONFIG_MAPPING.push({ guiId: 'SIGNAL_MODE_SELECT',cmd: 'signal_mode',     value: '1' });
 C.CONFIG_MAPPING.push({ guiId: 'BRIDNESS_SLIDER',   cmd: 'bridness',        value: '30' });
 C.CONFIG_MAPPING.push({ guiId: 'GAIN_SLIDER',       cmd: 'gain',            value: '30' })
-C.CONFIG_MAPPING.push({ guiId: 'FREQUENCY_SLIDER',  cmd: 'frequency',       value: '2' });
+C.CONFIG_MAPPING.push({ guiId: 'FREQUENCY_SLIDER',  cmd: 'frequency',       value: '20' });
 C.CONFIG_MAPPING.push({ guiId: 'WIFI_MODE_SELECT',  cmd: 'wifi_mode',       value: '1' });
 C.CONFIG_MAPPING.push({ guiId: 'MQTT_BROKER_TEXT',  cmd: 'mqtt_broker',     value: 'testBroker' });
 C.CONFIG_MAPPING.push({ guiId: 'MQTT_DELIMITER_TEXT',cmd: 'mqtt_delimiter', value: ';' });

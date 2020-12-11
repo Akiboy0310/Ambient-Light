@@ -23,7 +23,13 @@
 
 /* data structure holding current configuration parameters */
 struct config_struct {
+    int red;
+    int green;
+    int blue;
     int area1onof;
+    int area2onof;
+    int area3onof;
+    int area4onof;
     int onof;
     int signal_mode;
     int bridness;

@@ -145,15 +145,72 @@ void sendTask(void *param)
 
     int64_t timerTicks =  esp_timer_get_time();
     while (sendTaskRunning) {
-        float b = (float)config.frequency/100; 
+        float b = (float)config.frequency/100; // variable to set the bridness 
         vTaskDelay(1);
-        if (config.onof==1){
+        if (config.onof==1||config.area1onof==1||config.area2onof==1||config.area3onof==1||config.area4onof==1){
+            /*if (config.area1onof==1){
             set_led_strip_color(20*b,0*b,220*b,1);
-            set_led_strip_color(220*b,0*b,0*b,2);
-            set_led_strip_color(120*b,160*b,220*b,3);
-            set_led_strip_color(160*b,20*b,120*b,4);
             //show new color
             led_strip_show(&led_strip);
+            }
+            else
+            {
+                set_led_strip_color(0,0,0,1);
+                //show new color
+                led_strip_show(&led_strip);
+            }
+            if (config.area2onof==1){
+            set_led_strip_color(20*b,0*b,220*b,2);
+            //show new color
+            led_strip_show(&led_strip);
+            }
+            else
+            {
+                set_led_strip_color(0,0,0,2);
+                //show new color
+                led_strip_show(&led_strip);
+            }
+            if (config.area3onof==1){
+            set_led_strip_color(20*b,0*b,220*b,3);
+            //show new color
+            led_strip_show(&led_strip);
+            }
+            else
+            {
+            set_led_strip_color(0,0,0,3);
+            //show new color
+            led_strip_show(&led_strip);
+            }
+            if (config.area3onof==1){
+            set_led_strip_color(20*b,0*b,220*b,4);
+            //show new color
+            led_strip_show(&led_strip);
+            }
+            else
+            {
+            set_led_strip_color(0,0,0,4);
+            //show new color
+            led_strip_show(&led_strip);
+            }*/
+            if (config.onof==1)
+            {            
+            set_led_strip_color(config.red*b,config.green*b,config.blue*b,1);
+            set_led_strip_color(config.red*b,config.green*b,config.blue*b,2);
+            set_led_strip_color(config.red*b,config.green*b,config.blue*b,3);
+            set_led_strip_color(config.red*b,config.green*b,config.blue*b,4);
+            //show new color
+            led_strip_show(&led_strip);
+            }
+            else
+            {
+            set_led_strip_color(0,0,0,1);
+            set_led_strip_color(0,0,0,2);
+            set_led_strip_color(0,0,0,3);
+            set_led_strip_color(0,0,0,4);
+            //show new color
+            led_strip_show(&led_strip);
+            }
+            
         }
         else {
             set_led_strip_color(0,0,0,1);
@@ -163,17 +220,6 @@ void sendTask(void *param)
             //show new color
             led_strip_show(&led_strip);
         }
-        /*if (config.area1onof==1){
-            set_led_strip_color(20*b,0*b,220*b,1);
-            //show new color
-            led_strip_show(&led_strip);
-        }
-        else
-        {
-            set_led_strip_color(0,0,0,1);
-            //show new color
-            led_strip_show(&led_strip);
-        }*/
 
         
         xQueueSendToBack(sendQueue,&actSampleValue,0);                    
