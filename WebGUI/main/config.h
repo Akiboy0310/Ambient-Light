@@ -23,6 +23,7 @@
 
 /* data structure holding current configuration parameters */
 struct config_struct {
+    int area1onof;
     int onof;
     int signal_mode;
     int bridness;

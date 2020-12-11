@@ -52,7 +52,8 @@ esp_err_t init_config(void)
 
  //                          parameter name,     data type,       default value,   pointer to variable,    pointer to callback function
 
-    register_config_parameter ("onof",          CONFIG_TYPE_INT,    "1",            &config.onof,           NULL);
+    register_config_parameter ("area1onof",     CONFIG_TYPE_INT,    "0",            &config.area1onof,      NULL);
+    register_config_parameter ("onof",          CONFIG_TYPE_INT,    "0",            &config.onof,           NULL);
     register_config_parameter ("signal_mode",   CONFIG_TYPE_INT,    "1",            &config.signal_mode,    NULL);
     register_config_parameter ("bridnesss",     CONFIG_TYPE_INT,    "30",           &config.bridness,       NULL);
     register_config_parameter ("gain",          CONFIG_TYPE_INT,    "30",           &config.gain,           NULL);

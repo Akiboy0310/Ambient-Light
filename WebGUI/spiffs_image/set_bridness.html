@@ -32,10 +32,20 @@
         <br>
         <br>
         <div id="onofbox">
-            <a>Area 1</a>
+            <a>Main Switch</a>
             <!-- Rounded switch -->
             <label class="switch">
                 <input type="checkbox" id="ONOFBOX" onclick="onofChanged(event)">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <br>
+        <br>
+        <div id="onofbox">
+            <a>Area 1</a>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox" id="AREA1ONOF" onclick="onofChanged(event)">
                 <span class="slider round"></span>
             </label>
         </div>
@@ -264,7 +274,7 @@
             }
             function onofChanged(evt){
                 // Get the checkbox
-                var checkBox = document.getElementById("ONOFBOX");
+                var checkBox = document.getElementById(evt.currentTarget.id);
                 var id = evt.currentTarget.id;
                 var val;
                 if (checkBox.checked == true){

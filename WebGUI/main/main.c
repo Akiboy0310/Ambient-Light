@@ -74,21 +74,6 @@ void app_main(void)
     ESP_ERROR_CHECK(init_demoSignal());
     /*++++ init Neopixel driver ++++*/
     led_init();
-    
-    /*if (config.bridness!=0){
-        set_led_strip_color(20*h,0*h,220*h,1);
-        set_led_strip_color(220*h,0*h,0*h,2);
-        set_led_strip_color(120*h,160*h,220*h,3);
-        set_led_strip_color(160*h,20*h,120*h,4);
-    }
-    else
-    {
-        set_led_strip_color(0*h,0*h,0*h,1);
-        set_led_strip_color(0*h,0*h,0*h,2);
-        set_led_strip_color(0*h,0*h,0*h,3);
-        set_led_strip_color(0*h,0*h,0*h,4);
-    }*/
-    
     /* Initialize SPI filesystem, see spiffs.c  */
     ESP_ERROR_CHECK(init_spiffs());
 
