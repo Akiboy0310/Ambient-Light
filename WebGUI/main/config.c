@@ -27,9 +27,7 @@
 #include "esp_spiffs.h"
 #include "esp_http_server.h"
 
-#include "demo_signal.h"
-#include "Neopixeltest.h"
-#include "Neopixeltest.c"
+#include "neopixel.h"
 #include "led_strip.h"
 #include "config.h"
 

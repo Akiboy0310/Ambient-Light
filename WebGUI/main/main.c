@@ -22,8 +22,7 @@
 
 #include "freertos/FreeRTOS.h"
 #include "captdns.h"
-#include "demo_signal.h"
-#include "Neopixeltest.h"
+#include "neopixel.h"
 #include "led_strip.h"
 #include "gpio.h"
 #include "config.h"
@@ -71,7 +70,7 @@ void app_main(void)
     /* Initialize leds and buttons, see gpio.c */
     ESP_ERROR_CHECK(init_gpio());
     /* Initialize demo signal, see demo_signal.c */
-    ESP_ERROR_CHECK(init_demoSignal());
+    ESP_ERROR_CHECK(init_neopixel());
     /*++++ init Neopixel driver ++++*/
     led_init();
     /* Initialize SPI filesystem, see spiffs.c  */

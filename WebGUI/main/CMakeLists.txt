@@ -1,4 +1,4 @@
-idf_component_register(SRCS "main.c" "spiffs.c" "wifi.c" "web_server.c" "captdns.c" "demo_signal.c" "config.c" "gpio.c"
+idf_component_register(SRCS "main.c" "spiffs.c" "wifi.c" "web_server.c" "captdns.c" "neopixel.c" "config.c" "gpio.c"
                     INCLUDE_DIRS ".") 
 
 # Create a SPIFFS image from the contents of the 'spiffs_image' directory
