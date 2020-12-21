@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ahmed/Desktop/esp-idf-3/components/wear_levelling
+# Install script for directory: C:/Users/ahmed/Desktop/esp-idf/components/wear_levelling
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

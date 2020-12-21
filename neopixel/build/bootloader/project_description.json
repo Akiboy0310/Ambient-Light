@@ -1,20 +1,20 @@
 {
     "project_name":       "bootloader",
-    "project_path":       "C:/Users/ahmed/Desktop/esp-idf-3/components/bootloader/subproject",
+    "project_path":       "C:/Users/ahmed/Desktop/esp-idf/components/bootloader/subproject",
     "build_dir":          "C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/build/bootloader",
     "config_file":        "C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/neopixel/sdkconfig",
     "config_defaults":    "",
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",
-    "git_revision":       "v4.2-rc-5-g511965b26",
+    "git_revision":       "v4.2-47-g2532ddd9f",
     "target":             "esp32",
     "phy_data_partition": "",
     "monitor_baud" :      "115200",
     "monitor_toolprefix": "xtensa-esp32-elf-",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "C:/Users/ahmed/Desktop/esp-idf-3/components/efuse/Kconfig;C:/Users/ahmed/Desktop/esp-idf-3/components/esp32/Kconfig;C:/Users/ahmed/Desktop/esp-idf-3/components/esp_common/Kconfig;C:/Users/ahmed/Desktop/esp-idf-3/components/log/Kconfig;C:/Users/ahmed/Desktop/esp-idf-3/components/spi_flash/Kconfig",
-        "COMPONENT_KCONFIGS_PROJBUILD" : "C:/Users/ahmed/Desktop/esp-idf-3/components/bootloader/Kconfig.projbuild;C:/Users/ahmed/Desktop/esp-idf-3/components/esptool_py/Kconfig.projbuild;C:/Users/ahmed/Desktop/esp-idf-3/components/partition_table/Kconfig.projbuild"
+        "COMPONENT_KCONFIGS" : "C:/Users/ahmed/Desktop/esp-idf/components/efuse/Kconfig;C:/Users/ahmed/Desktop/esp-idf/components/esp32/Kconfig;C:/Users/ahmed/Desktop/esp-idf/components/esp_common/Kconfig;C:/Users/ahmed/Desktop/esp-idf/components/log/Kconfig;C:/Users/ahmed/Desktop/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "C:/Users/ahmed/Desktop/esp-idf/components/bootloader/Kconfig.projbuild;C:/Users/ahmed/Desktop/esp-idf/components/esptool_py/Kconfig.projbuild;C:/Users/ahmed/Desktop/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_rom", "esptool_py", "log", "main", "micro-ecc", "partition_table", "soc", "spi_flash", "xtensa", "" ],
-    "build_component_paths" : [ "C:/Users/ahmed/Desktop/esp-idf-3/components/bootloader", "C:/Users/ahmed/Desktop/esp-idf-3/components/bootloader_support", "C:/Users/ahmed/Desktop/esp-idf-3/components/efuse", "C:/Users/ahmed/Desktop/esp-idf-3/components/esp32", "C:/Users/ahmed/Desktop/esp-idf-3/components/esp_common", "C:/Users/ahmed/Desktop/esp-idf-3/components/esp_rom", "C:/Users/ahmed/Desktop/esp-idf-3/components/esptool_py", "C:/Users/ahmed/Desktop/esp-idf-3/components/log", "C:/Users/ahmed/Desktop/esp-idf-3/components/bootloader/subproject/main", "C:/Users/ahmed/Desktop/esp-idf-3/components/bootloader/subproject/components/micro-ecc", "C:/Users/ahmed/Desktop/esp-idf-3/components/partition_table", "C:/Users/ahmed/Desktop/esp-idf-3/components/soc", "C:/Users/ahmed/Desktop/esp-idf-3/components/spi_flash", "C:/Users/ahmed/Desktop/esp-idf-3/components/xtensa", "" ]
+    "build_component_paths" : [ "C:/Users/ahmed/Desktop/esp-idf/components/bootloader", "C:/Users/ahmed/Desktop/esp-idf/components/bootloader_support", "C:/Users/ahmed/Desktop/esp-idf/components/efuse", "C:/Users/ahmed/Desktop/esp-idf/components/esp32", "C:/Users/ahmed/Desktop/esp-idf/components/esp_common", "C:/Users/ahmed/Desktop/esp-idf/components/esp_rom", "C:/Users/ahmed/Desktop/esp-idf/components/esptool_py", "C:/Users/ahmed/Desktop/esp-idf/components/log", "C:/Users/ahmed/Desktop/esp-idf/components/bootloader/subproject/main", "C:/Users/ahmed/Desktop/esp-idf/components/bootloader/subproject/components/micro-ecc", "C:/Users/ahmed/Desktop/esp-idf/components/partition_table", "C:/Users/ahmed/Desktop/esp-idf/components/soc", "C:/Users/ahmed/Desktop/esp-idf/components/spi_flash", "C:/Users/ahmed/Desktop/esp-idf/components/xtensa", "" ]
 }

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ahmed/Desktop/esp-idf-3/components/wpa_supplicant
+# Install script for directory: C:/Users/ahmed/Desktop/esp-idf/components/wpa_supplicant
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

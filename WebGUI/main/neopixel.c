@@ -8,7 +8,6 @@
 #include "gpio.h"
 #include "config.h"
 #include "neopixel.h"
-#define extern LENGTH_OF_LED_STRIP 39
 static const char *TAG = "send_task";
 // When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
 // Note that for older NeoPixel strips you might need to change the third parameter--see the strandtest
@@ -44,43 +43,18 @@ uint8_t led_init(void){
   }
     return 0; 
 }
-void set_led_strip_color(uint8_t r,uint8_t g, uint8_t b,uint8_t area){
+void set_led_strip_color(uint8_t r,uint8_t g, uint8_t b,uint8_t area,float bridness){
     /**
     * Funktion to set the color of the ledstrip. If area = 1 the first quarter will be set,
     * if area = 2 the second quarter etc.*/ 
-    switch (area)
+    uint8_t startLED = (area-1) * (LENGTH_OF_LED_STRIP / 4);
+    uint8_t endLED = area * (LENGTH_OF_LED_STRIP / 4);
+
+    //ESP_LOGI("NP","Start: %d, %d", startLED,endLED);
+
+    for(uint8_t i = startLED; i<=endLED; i++)
     {
-    case 1:
-        for(uint8_t i =0; i<LENGTH_OF_LED_STRIP*0.25; i++)
-            {
-                //set the same color for each LED
-                led_strip_set_pixel_rgb(&led_strip, i,r,g,b);
-            }
-        break;
-    case 2:
-        for(uint8_t i =LENGTH_OF_LED_STRIP*0.25; i<LENGTH_OF_LED_STRIP*0.5; i++)
-            {
-                //set the same color for each LED
-                led_strip_set_pixel_rgb(&led_strip, i,r,g,b);
-            }
-        break;
-    case 3:
-        for(uint8_t i =LENGTH_OF_LED_STRIP*0.5; i<LENGTH_OF_LED_STRIP*0.75; i++)
-            {
-                //set the same color for each LED
-                led_strip_set_pixel_rgb(&led_strip, i,r,g,b);
-            }
-        break;
-    case 4:
-        for(uint8_t i =LENGTH_OF_LED_STRIP*0.75; i<LENGTH_OF_LED_STRIP; i++)
-            {
-                //set the same color for each LED
-                led_strip_set_pixel_rgb(&led_strip, i,r,g,b);
-            }
-        break;
-    default:
-        printf("Please choose an area from 1 to 4");
-        break;
+        led_strip_set_pixel_rgb(&led_strip, i,r*bridness,g*bridness,b*bridness);
     }
 }
 int sendTaskRunning=0;
@@ -172,26 +146,49 @@ void sendTask(void *param)
 
     int64_t timerTicks =  esp_timer_get_time();
     while (sendTaskRunning) {
-        float b = (float)config.frequency/100; // variable to set the bridness 
+        float bridness = (float)config.frequency/100; // variable to set the bridness 
         vTaskDelay(1);
-        if (config.onof==1||config.area1onof==1||config.area2onof==1||config.area3onof==1||config.area4onof==1){
-            set_led_strip_color(config.red*b,config.green*b,config.blue*b,1);
-            set_led_strip_color(config.red*b,config.green*b,config.blue*b,2);
-            set_led_strip_color(config.red*b,config.green*b,config.blue*b,3);
-            set_led_strip_color(config.red*b,config.green*b,config.blue*b,4);
-            //show new color
-            led_strip_show(&led_strip);
+        if(config.onof==1||config.area1onof==1 ||config.area2onof==1 ||config.area3onof==1 || config.area4onof==1){
+            if (config.onof==1){
+                set_led_strip_color(config.red,config.green,config.blue,1,bridness);
+                set_led_strip_color(config.red,config.green,config.blue,2,bridness);
+                set_led_strip_color(config.red,config.green,config.blue,3,bridness);
+                set_led_strip_color(config.red,config.green,config.blue,4,bridness);
+            }
+            if (config.area1onof==1){
+                set_led_strip_color(config.red,config.green,config.blue,1,bridness);
+            }
+            else {
+                set_led_strip_color(0,0,0,1,0);
+            }
+            if (config.area2onof==1){
+                set_led_strip_color(config.red,config.green,config.blue,2,bridness);
+            }
+            else {
+                set_led_strip_color(0,0,0,2,0);
+            }
+            if (config.area3onof==1){
+                set_led_strip_color(config.red,config.green,config.blue,3,bridness);
+            }
+            else {
+                set_led_strip_color(0,0,0,3,0);
+            }
+            if (config.area4onof==1){
+                set_led_strip_color(config.red,config.green,config.blue,4,bridness);
+            }
+            else {
+                set_led_strip_color(0,0,0,4,0);
+            }
         }
         else {
-            set_led_strip_color(0,0,0,1);
-            set_led_strip_color(0,0,0,2);
-            set_led_strip_color(0,0,0,3);
-            set_led_strip_color(0,0,0,4);
-            //show new color
-            led_strip_show(&led_strip);
+            set_led_strip_color(0,0,0,1,0);
+            set_led_strip_color(0,0,0,2,0);
+            set_led_strip_color(0,0,0,3,0);
+            set_led_strip_color(0,0,0,4,0);
         }
+        //show new color
+        led_strip_show(&led_strip);
 
-        
         xQueueSendToBack(sendQueue,&actSampleValue,0);                    
         if (++sendCount>=SEND_INTERVAL) {
             sendCount=0;

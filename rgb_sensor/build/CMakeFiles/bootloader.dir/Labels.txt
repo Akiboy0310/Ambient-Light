@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/CMakeFiles/bootloader
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/CMakeFiles/bootloader.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/CMakeFiles/bootloader-complete.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule

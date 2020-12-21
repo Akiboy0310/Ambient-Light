@@ -61,7 +61,7 @@ esp_err_t init_config(void)
     register_config_parameter ("signal_mode",   CONFIG_TYPE_INT,    "1",            &config.signal_mode,    NULL);
     register_config_parameter ("bridnesss",     CONFIG_TYPE_INT,    "30",           &config.bridness,       NULL);
     register_config_parameter ("gain",          CONFIG_TYPE_INT,    "30",           &config.gain,           NULL);
-    register_config_parameter ("frequency",     CONFIG_TYPE_INT,    "20",            &config.frequency,      NULL);
+    register_config_parameter ("frequency",     CONFIG_TYPE_INT,    "20",           &config.frequency,      NULL);
     register_config_parameter ("wifi_mode",     CONFIG_TYPE_INT,    "1",            &config.wifi_mode,      NULL);
     register_config_parameter ("mqtt_broker",   CONFIG_TYPE_STRING, "testBroker",   &config.mqttBroker,     NULL);
     register_config_parameter ("mqtt_delimiter",CONFIG_TYPE_STRING, ";",            &config.mqttDelimiter,  NULL);

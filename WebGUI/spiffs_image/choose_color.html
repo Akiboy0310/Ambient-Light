@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/tabby.css">
         <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/classic.min.css"/> <!-- 'classic' theme -->
         <!--<script src="lib/androidc.js"></script>-->
         <script src="lib/tabby.js"></script>
         <script src="lib/domi18n.js"></script>
@@ -19,27 +20,28 @@
         <script src="js/mockcomm.js"></script>
         <script src="js/tabbasic.js"></script>
         <script src="js/tabglob.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
+        <script src="js/pickr.min.js"></script>
     </head>
     <body>
         <div id="header">
             <a> Light Control</a>
         </div>
         <div id="menu">
-            <a href="choose_color.html" >color/scene</a>
-            <a href="set_bridness.html" >control panel</a>
-            <a href="ambient_light_settings.html" >settings</a>
+            <a href="choose_color.html" onclick="tabBasic.startDisplay()">color/scene</a>
+            <a href="set_bridness.html" onclick="tabBasic.startDisplay()">control panel</a>
+            <a href="ambient_light_settings.html" onclick="tabBasic.startDisplay()">settings</a>
         </div>
         <br>
-        <a style="color: rgb(44, 62, 80); background-color:red;" class="button">red</a>
-        <a style="color: rgb(44, 62, 80);background-color: green;" class="button">green</a>
-        <a style="color: rgb(44, 62, 80);background-color: blue;" class="button">blue</a>
         <br>
+        <!--Color Picker created by Simonwep https://github.com/Simonwep/pickr -->
+        <div id="colorpicker">
+        <a>choose color</a>
         <div class="color-picker"></div>
+        </div>
         <br>
-        <div id = "red"><input type="text" id="RED"></div>
-        <div id = "green"><input type="text" id="GREEN"></div>
-        <div id = "blue"><input type="text" id="BLUE"></div>
+        <div style=display:none id = "red"><input type="text" id="RED"></div>
+        <div style=display:none id = "green"><input type="text" id="GREEN"></div>
+        <div style=display:none id = "blue"><input type="text" id="BLUE"></div>
         <br>
         <div id="onofbox">
             <a>Main Switch</a>
@@ -49,13 +51,11 @@
                 <span class="slider round"></span>
             </label>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
         <script>
             // Simple example, see optional options for more configuration.
             const pickr = Pickr.create({
                 el: '.color-picker',
-                theme: 'classic', // or 'monolith', or 'nano'
-
+                theme: 'classic', // or 'monolith', or 'nano'  
                 swatches: [
                     'rgba(244, 67, 54, 1)',
                     'rgba(233, 30, 99, 0.95)',

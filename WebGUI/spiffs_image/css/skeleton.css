@@ -199,6 +199,22 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
   text-align: top;
   text-decoration: none;
 }
+#colorpicker{
+  height: 40 px;
+  width: 60%;
+  position: relative;
+  left: 20%;
+  
+}
+#colorpicker a{
+  position: relative;
+  width: 33%;
+  font-size: 175%;
+  display: inline-block;
+  text-align: left;
+  text-align: top;
+  text-decoration: none;
+}
 p {
   margin-top: 0; }
 
