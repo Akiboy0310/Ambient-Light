@@ -1,1 +1,14 @@
-88886c015295ff131bd8fcec258a44aba0975da3
+0000000000000000000000000000000000000000 d4ac147d5e3bcbcbb9aa72268ba2bce04f9f537b AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1604648165 +0100	clone: from https://github.com/Akiboy0310/Ambient-Light.git
+d4ac147d5e3bcbcbb9aa72268ba2bce04f9f537b cfe73a9f53fae600c7feb1f38acb2fe5435f2f6a AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1605950554 +0100	commit: Neopixel programm crated but not finished
+cfe73a9f53fae600c7feb1f38acb2fe5435f2f6a b9bad81fd9ff1960d216c5360cc8bb4c61c82802 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1606297394 +0100	commit: working neopixel Code
+b9bad81fd9ff1960d216c5360cc8bb4c61c82802 b7eee8001847167ef5339c0a7802650887427e21 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1606297699 +0100	commit: no changes
+b7eee8001847167ef5339c0a7802650887427e21 dcafc21b43f1189bce0b0b93543fbb7245ae80f7 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1606298021 +0100	pull: Fast-forward
+dcafc21b43f1189bce0b0b93543fbb7245ae80f7 283098ec9cc5d44f2ac40767be6ae40ff64e280f AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1606300364 +0100	commit: added comments and did some changes
+283098ec9cc5d44f2ac40767be6ae40ff64e280f 6569a1732e1742cdf9ac0ffa30dcd6fa35ebf664 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1607174691 +0100	commit: WebGUI created with demo code as basis not finished
+6569a1732e1742cdf9ac0ffa30dcd6fa35ebf664 c0432dcff85cbb6133a509870f2c0f1d242b00dd AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1607174766 +0100	commit: no changes
+c0432dcff85cbb6133a509870f2c0f1d242b00dd 2e3bff401578b8cd0104437af3a79460b408d806 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1607610608 +0100	commit: Changes WEBGUI
+2e3bff401578b8cd0104437af3a79460b408d806 704eba245fb307a424d33f7de929a9b599da7973 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1607619444 +0100	commit: turning Neopixel with toggle switch on and of
+704eba245fb307a424d33f7de929a9b599da7973 970f0bbeaacb5c1df92c974d6f3661277066a403 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1607681262 +0100	commit: Neopixel can be turned on/of and the bridness can be set via the Web-GUI
+970f0bbeaacb5c1df92c974d6f3661277066a403 16b594dc9a06b29fca5efab27df8db2399019780 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1607699174 +0100	commit: Color of Neopixels can be set via colorpicker
+16b594dc9a06b29fca5efab27df8db2399019780 88886c015295ff131bd8fcec258a44aba0975da3 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1607850429 +0100	commit: little changes
+88886c015295ff131bd8fcec258a44aba0975da3 d32ce42fe19c27b02daa571da458df5fcbb3d804 AKIBOY\ahmed <ahmedmohamed031098@gmail.com> 1608551854 +0100	commit: RGB Sensor read c r g b Values

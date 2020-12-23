@@ -956,3 +956,15 @@
 70	153	6301558675930336	bootloader/bootloader.map	a863254073bbaf
 75	613	0	esp-idf/main/CMakeFiles/spiffs_storage_bin	94fc8f95d9c8b17
 613	22241	0	CMakeFiles/flash	ce411e4b9fbe68d7
+17	10658	6304398565207567	build.ninja	24ab0baefd42afc2
+98	237	6301558675930336	bootloader-prefix/src/bootloader-stamp/bootloader-build	a863254073bbaf
+98	237	6301558675930336	bootloader/bootloader.elf	a863254073bbaf
+98	237	6301558675930336	bootloader/bootloader.bin	a863254073bbaf
+98	237	6301558675930336	bootloader/bootloader.map	a863254073bbaf
+102	596	6304398572431032	esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_app_desc.c.obj	12e59a38245c04e5
+597	719	6304398573747525	esp-idf/app_update/libapp_update.a	5a1013356e98497b
+106	1050	0	esp-idf/main/CMakeFiles/spiffs_storage_bin	94fc8f95d9c8b17
+720	3557	6304398601800184	esp-idf/esp32/ld/esp32.project.ld	fce229ce1ef55143
+3557	8542	6304398651711224	webgui_spiffs.elf	361e7f04bc319e04
+8543	9158	6304398658069305	.bin_timestamp	3a653f8e48b71123
+9158	30827	0	CMakeFiles/flash	ce411e4b9fbe68d7
