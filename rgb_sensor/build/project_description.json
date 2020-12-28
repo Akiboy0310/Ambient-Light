@@ -6,7 +6,7 @@
     "config_defaults":    "C:/Users/ahmed/Ambient_Light_Projekt/Ambient-Light/rgb_sensor/sdkconfig.defaults",
     "app_elf":            "rgb_sensor.elf",
     "app_bin":            "rgb_sensor.bin",
-    "git_revision":       "v4.2-47-g2532ddd9f",
+    "git_revision":       "v4.2-47-g2532ddd9f-dirty",
     "target":             "esp32",
     "phy_data_partition": "",
     "monitor_baud" :      "115200",

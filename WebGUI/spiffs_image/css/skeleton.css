@@ -169,6 +169,22 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
   text-decoration: none;
   
 }
+/*topics
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#topics{
+  background-color:rgb(44, 62, 80);
+  height: 50px;
+}
+#topics a{
+  color: rgb(189, 195, 199);
+  font-size: 150%;
+  width: 50%;
+  font-weight: bold;
+  display: inline-block;
+  text-align: left;
+  text-decoration: none;
+  
+}
 /* Menü
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #menu{

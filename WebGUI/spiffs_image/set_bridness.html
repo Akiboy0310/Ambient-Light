@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/tabby.css">
         <link rel="stylesheet" href="css/custom.css">
         <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/classic.min.css"/> <!-- 'classic' theme -->
         <!--<script src="lib/androidc.js"></script>-->
         <script src="lib/tabby.js"></script>
         <script src="lib/domi18n.js"></script>
@@ -19,17 +20,16 @@
         <script src="js/mockcomm.js"></script>
         <script src="js/tabbasic.js"></script>
         <script src="js/tabglob.js"></script>
+        <script src="js/pickr.min.js"></script>
     </head>
-    <body>
+    <body onload="tabBasic.startDisplay()">
         <div id="header">
             <a> Light Control</a>
         </div>
-        <div id="menu">
-            <a href="choose_color.html" onclick="tabBasic.startDisplay()">color/scene</a>
-            <a href="set_bridness.html" onclick="tabBasic.startDisplay()">control panel</a>
-            <a href="ambient_light_settings.html"onclick="tabBasic.startDisplay()">settings</a>
-        </div>
         <br>
+        <div id="topics">
+            <a>Light Switches</a>
+        </div>
         <br>
         <div id="onofbox">
             <a>Main Switch</a>
@@ -80,6 +80,20 @@
             </label>
         </div>
         <br>
+        <br>
+        <div id="onofbox">
+            <a>Color Sensing</a>
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox" id="COLORSENSING" onclick="onofChanged(event)">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <br>
+        <br>
+        <div id="topics">
+            <a>Bridness</a>
+        </div>
         <br>        
         <div id="bridness-slider">
             <div class="row">
@@ -110,8 +124,78 @@
                 <input type="range" oninput="sliderChanged(event)" onchange="sliderChanged(event)"
                        id="GAIN_SLIDER" min="0" max="300" class="seven columns" accesskey="a">
             </div>
+            <br>
+            <br>
+        <div id="topics">
+            <a>Color/Scene</a>
+        </div>
+        <br>
+            <!--Color Picker created by Simonwep https://github.com/Simonwep/pickr -->
+        <div id="colorpicker">
+            <a>choose color</a>
+            <div class="color-picker"></div>
+            </div>
+            <br>
+            <div style=display:none id = "red"><input type="text" id="RED"></div>
+            <div style=display:none id = "green"><input type="text" id="GREEN"></div>
+            <div style=display:none id = "blue"><input type="text" id="BLUE"></div>
         </div>
         <script>
+            // Simple example, see optional options for more configuration.
+            const pickr = Pickr.create({
+                el: '.color-picker',
+                theme: 'classic', // or 'monolith', or 'nano'  
+                swatches: [
+                    'rgba(244, 67, 54, 1)',
+                    'rgba(233, 30, 99, 0.95)',
+                    'rgba(156, 39, 176, 0.9)',
+                    'rgba(103, 58, 183, 0.85)',
+                    'rgba(63, 81, 181, 0.8)',
+                    'rgba(33, 150, 243, 0.75)',
+                    'rgba(3, 169, 244, 0.7)',
+                    'rgba(0, 188, 212, 0.7)',
+                    'rgba(0, 150, 136, 0.75)',
+                    'rgba(76, 175, 80, 0.8)',
+                    'rgba(139, 195, 74, 0.85)',
+                    'rgba(205, 220, 57, 0.9)',
+                    'rgba(255, 235, 59, 0.95)',
+                    'rgba(255, 193, 7, 1)'
+                ],
+
+                components: {
+
+                    // Main components
+                    preview: true,
+                    opacity: true,
+                    hue: true,
+
+                    // Input / output Options
+                    interaction: {
+                        hex: true,
+                        rgba: true,
+                        hsla: true,
+                        hsva: true,
+                        cmyk: true,
+                        input: true,
+                        clear: true,
+                        save: true
+                    }
+                }
+            });
+            pickr.on('change', (...args) => {
+                let color = args[0].toRGBA();
+                console.log(color);
+                var r=color[0];
+                var g=color[1];
+                var b=color[2];
+                idr = RED.id;
+                idg = GREEN.id;
+                idb = BLUE.id;
+                applyValue (idr,r);
+                applyValue (idg,g);
+                applyValue (idb,b);
+
+            });
            window.onload = function () {
                 tabby.init();
                 domI18n({

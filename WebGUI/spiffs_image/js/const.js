@@ -24,6 +24,7 @@ C.CONFIG_MAPPING = [];
 C.CONFIG_MAPPING.push({ guiId: 'RED',               cmd: 'red',             value: '100' });
 C.CONFIG_MAPPING.push({ guiId: 'GREEN',             cmd: 'green',           value: '200' });
 C.CONFIG_MAPPING.push({ guiId: 'BLUE',              cmd: 'blue',            value: '50' });
+C.CONFIG_MAPPING.push({ guiId: 'COLORSENSING',      cmd: 'colorsensing',    value: '0' });
 C.CONFIG_MAPPING.push({ guiId: 'AREA1ONOF',         cmd: 'area1onof',       value: '0' });
 C.CONFIG_MAPPING.push({ guiId: 'AREA2ONOF',         cmd: 'area2onof',       value: '0' });
 C.CONFIG_MAPPING.push({ guiId: 'AREA3ONOF',         cmd: 'area3onof',       value: '0' });

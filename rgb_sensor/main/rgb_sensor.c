@@ -5,54 +5,14 @@
 #include "sdkconfig.h"
 #include "esp_log.h"
 #include "driver/i2c.h"
-
-#define SAMPLE_PERIOD_MS		200
-
-#define I2C_SCL_IO				21               /*!< gpio number for I2C master clock */
-#define I2C_SDA_IO				22               /*!< gpio number for I2C master data  */
-#define I2C_FREQ_HZ				100000           /*!< I2C master clock frequency */
-#define I2C_PORT_NUM			I2C_NUM_0        /*!< I2C port number for master dev */
-#define I2C_TX_BUF_DISABLE  	0                /*!< I2C master do not need buffer */
-#define I2C_RX_BUF_DISABLE  	0                /*!< I2C master do not need buffer */
-
-// I2C common protocol defines
-#define WRITE_BIT                          I2C_MASTER_WRITE /*!< I2C master write */
-#define READ_BIT                           I2C_MASTER_READ  /*!< I2C master read */
-#define ACK_CHECK_EN                       0x1              /*!< I2C master will check ack from slave*/
-#define ACK_CHECK_DIS                      0x0              /*!< I2C master will not check ack from slave */
-#define ACK_VAL                            0x0              /*!< I2C ack value */
-#define NACK_VAL                           0x1              /*!< I2C nack value */
-
-// TCS34725 defines
-#define TCS34725_ADDRESS        0x29             /**< I2C address **/
-#define TCS34725_ENABLE         0x00             /**< Interrupt Enable register */
-#define TCS34725_ENABLE_AIEN    0x10             /**< RGBC Interrupt Enable */
-#define TCS34725_ENABLE_WEN                                                    \
-  0x08 /**< Wait Enable - Writing 1 activates the wait timer */
-#define TCS34725_ENABLE_AEN                                                    \
-  0x02 /**< RGBC Enable - Writing 1 actives the ADC, 0 disables it */
-#define TCS34725_ENABLE_PON                                                    \
-  0x01 /**< Power on - Writing 1 activates the internal oscillator, 0        \
-            disables it */
-#define TCS34725_ATIME          0x01             /**< Integration time */
-#define TCS34725_WTIME          0x03             /**< Wait time*/
-#define TCS34725_CONTROL        0x0F             /**< Set the gain level for the sensor */
-#define TCS34725_CDATAL         0x14             /**< Clear channel data low byte */
-#define TCS34725_CDATAH         0x15             /**< Clear channel data high byte */
-#define TCS34725_RDATAL         0x16             /**< Red channel data low byte */
-#define TCS34725_RDATAH         0x17             /**< Red channel data high byte */
-#define TCS34725_GDATAL         0x18             /**< Green channel data low byte */
-#define TCS34725_GDATAH         0x19             /**< Green channel data high byte */
-#define TCS34725_BDATAL         0x1A             /**< Blue channel data low byte */
-#define TCS34725_BDATAH         0x1B             /**< Blue channel data high byte */
-
+#include "rgb_sensor.h"
 
 void i2c_master_init(){
   // configure the i2c controller 0 in master mode, normal speed
 	i2c_config_t conf;
 	conf.mode = I2C_MODE_MASTER;
-	conf.sda_io_num = I2C_SCL_IO;
-	conf.scl_io_num = I2C_SDA_IO;
+	conf.sda_io_num = I2C_SDA_IO;
+	conf.scl_io_num = I2C_SCL_IO;
 	conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
 	conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
 	conf.master.clk_speed = 100000;
@@ -71,7 +31,7 @@ void i2c_master_init(){
  * --------|--------------------------|----------------|----------------------|--------------------|------|
  *
  */
-static esp_err_t i2c_master_read_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_rd, size_t size)
+esp_err_t i2c_master_read_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_rd, size_t size)
 {
   //uint8_t throwaway=0;
     if (size == 0) {
@@ -107,7 +67,7 @@ static esp_err_t i2c_master_read_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr,
  * --------|---------------------------|----------------|----------------------|------|
  *
  */
-static esp_err_t i2c_master_write_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_wr, size_t size)
+esp_err_t i2c_master_write_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_wr, size_t size)
 {
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
     i2c_master_start(cmd);
@@ -156,49 +116,65 @@ void tcs34725_init(){
     value= (0x00);
     wrtcs34725x( TCS34725_CONTROL,&(value),1);
 }
-
+void tcs34725_1(uint8_t*r1, uint8_t*g1, uint8_t*b1){
+    uint8_t rl=0;
+    uint8_t gl=0;
+    uint8_t bl=0;
+    uint8_t rh=0;
+    uint8_t gh=0;
+    uint8_t bh=0;
+    uint16_t r;
+    uint16_t g;
+    uint16_t b;
+    rdtcs34725x( TCS34725_RDATAL,&rl,1);
+    rdtcs34725x( TCS34725_RDATAH,&rh,1);
+    rdtcs34725x( TCS34725_GDATAL,&gl,1);
+    rdtcs34725x( TCS34725_GDATAH,&gh,1);
+    rdtcs34725x( TCS34725_BDATAL,&bl,1);
+    rdtcs34725x( TCS34725_BDATAH,&bh,1);
+    r = ((uint16_t) rh << 8) | (uint16_t) rl;
+    g = ((uint16_t) gh << 8) | (uint16_t) gl;
+    b = ((uint16_t) bh << 8) | (uint16_t) bl;
+    *r1=(uint8_t)r;
+    *g1=(uint8_t)g;
+    *b1=(uint8_t)b;
+}
+void tcs34725_2(uint8_t*r2, uint8_t*g2, uint8_t*b2){
+    uint8_t rl=0;
+    uint8_t gl=0;
+    uint8_t bl=0;
+    uint8_t rh=0;
+    uint8_t gh=0;
+    uint8_t bh=0;
+    uint16_t r;
+    uint16_t g;
+    uint16_t b;
+    rdtcs34725x( TCS34725_RDATAL,&rl,1);
+    rdtcs34725x( TCS34725_RDATAH,&rh,1);
+    rdtcs34725x( TCS34725_GDATAL,&gl,1);
+    rdtcs34725x( TCS34725_GDATAH,&gh,1);
+    rdtcs34725x( TCS34725_BDATAL,&bl,1);
+    rdtcs34725x( TCS34725_BDATAH,&bh,1);
+    r = ((uint16_t) rh << 8) | (uint16_t) rl;
+    g = ((uint16_t) gh << 8) | (uint16_t) gl;
+    b = ((uint16_t) bh << 8) | (uint16_t) bl;
+    *r2=rl;
+    *g2=gl;
+    *b2=bl;
+}
 
 void app_main(void){ 
     i2c_master_init();
     tcs34725_enable();
     tcs34725_init();
-    uint8_t cl=0;
-    uint8_t rl=0;
-    uint8_t gl=0;
-    uint8_t bl=0;
-    uint8_t ch=0;
-    uint8_t rh=0;
-    uint8_t gh=0;
-    uint8_t bh=0;
-    uint8_t e;
-    uint16_t c;
-    uint16_t r;
-    uint16_t g;
-    uint16_t b;
+    uint8_t r1, r2;
+    uint8_t g1, g2;
+    uint8_t b1, b2;
     while(1){
-	  // cData lsb, cData msb, red lsb, red msb, green lsb, green msb, blue lsb, blue msb
-    //wrtcs34725x(TCS34725_ENABLE,0x03,1);
-    rdtcs34725x(TCS34725_ENABLE,&e,1);
-    //wrtcs34725x(TCS34725_CDATAH,0x00,1);
-    rdtcs34725x( TCS34725_CDATAL,&cl,1);
-    rdtcs34725x( TCS34725_CDATAH,&ch,1);
-    //wrtcs34725x(TCS34725_CDATAH,0x00,1);
-    rdtcs34725x( TCS34725_RDATAL,&rl,1);
-    rdtcs34725x( TCS34725_RDATAH,&rh,1);
-    //wrtcs34725x(TCS34725_CDATAH,0x00,1);
-    rdtcs34725x( TCS34725_GDATAL,&gl,1);
-    rdtcs34725x( TCS34725_GDATAH,&gh,1);
-    rdtcs34725x( TCS34725_BDATAL,&bl,1);
-    rdtcs34725x( TCS34725_BDATAH,&bh,1);
-    c = ((uint16_t) ch << 8) | (uint16_t) cl;
-    r = ((uint16_t) rh << 8) | (uint16_t) rl;
-    g = ((uint16_t) gh << 8) | (uint16_t) gl;
-    b = ((uint16_t) bh << 8) | (uint16_t) bl;
-    printf("Enable Reg: %d \n",e);
-    printf("clear :%d\n",c);
-    printf("red:%d\n", r);
-    printf("green :%d\n", g);
-    printf("blue :%d\n", b);
+	  tcs34725_2(&r1, &g1, &b1);
+    printf("red:%d\n", r1);
+    printf("green :%d\n", g1);
+    printf("blue :%d\n", b1);
     vTaskDelay(800 / portTICK_RATE_MS);
   
     }

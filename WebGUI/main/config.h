@@ -26,6 +26,7 @@ struct config_struct {
     int red;
     int green;
     int blue;
+    int colorsensing;
     int area1onof;
     int area2onof;
     int area3onof;

@@ -8,6 +8,7 @@
 #include "gpio.h"
 #include "config.h"
 #include "neopixel.h"
+#include "rgb_sensor.h"
 static const char *TAG = "send_task";
 // When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
 // Note that for older NeoPixel strips you might need to change the third parameter--see the strandtest
@@ -143,42 +144,27 @@ void sendTask(void *param)
 
 
     sendTaskRunning=1;
-
+    float r1, r2;
+    float g1, g2;
+    float b1, b2;
     int64_t timerTicks =  esp_timer_get_time();
     while (sendTaskRunning) {
         float bridness = (float)config.frequency/100; // variable to set the bridness 
         vTaskDelay(1);
-        if(config.onof==1||config.area1onof==1 ||config.area2onof==1 ||config.area3onof==1 || config.area4onof==1){
-            if (config.onof==1){
-                set_led_strip_color(config.red,config.green,config.blue,1,bridness);
-                set_led_strip_color(config.red,config.green,config.blue,2,bridness);
-                set_led_strip_color(config.red,config.green,config.blue,3,bridness);
-                set_led_strip_color(config.red,config.green,config.blue,4,bridness);
-            }
-            if (config.area1onof==1){
-                set_led_strip_color(config.red,config.green,config.blue,1,bridness);
-            }
-            else {
-                set_led_strip_color(0,0,0,1,0);
-            }
-            if (config.area2onof==1){
-                set_led_strip_color(config.red,config.green,config.blue,2,bridness);
-            }
-            else {
-                set_led_strip_color(0,0,0,2,0);
-            }
-            if (config.area3onof==1){
-                set_led_strip_color(config.red,config.green,config.blue,3,bridness);
-            }
-            else {
-                set_led_strip_color(0,0,0,3,0);
-            }
-            if (config.area4onof==1){
-                set_led_strip_color(config.red,config.green,config.blue,4,bridness);
-            }
-            else {
-                set_led_strip_color(0,0,0,4,0);
-            }
+        if (config.onof==1 && config.colorsensing==1)
+        {
+            tcs34725_2(&r1, &g1, &b1);
+            set_led_strip_color(r1,g1,b1,1,bridness);
+            set_led_strip_color(r1,g1,b1,2,bridness);
+            set_led_strip_color(r1,g1,b1,3,bridness);
+            set_led_strip_color(r1,g1,b1,4,bridness);
+        }
+        
+        else if(config.onof==1||config.area1onof==1 ||config.area2onof==1 ||config.area3onof==1 || config.area4onof==1){
+            set_led_strip_color(config.red,config.green,config.blue,1,bridness);
+            set_led_strip_color(config.red,config.green,config.blue,2,bridness);
+            set_led_strip_color(config.red,config.green,config.blue,3,bridness);
+            set_led_strip_color(config.red,config.green,config.blue,4,bridness);
         }
         else {
             set_led_strip_color(0,0,0,1,0);

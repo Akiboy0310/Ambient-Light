@@ -53,6 +53,7 @@ esp_err_t init_config(void)
     register_config_parameter ("red",           CONFIG_TYPE_INT,    "100",          &config.red,            NULL);
     register_config_parameter ("green",         CONFIG_TYPE_INT,    "200",          &config.green,          NULL);
     register_config_parameter ("blue",          CONFIG_TYPE_INT,    "50",           &config.blue,           NULL);
+    register_config_parameter ("colorsensing",  CONFIG_TYPE_INT,    "0",            &config.colorsensing,   NULL);
     register_config_parameter ("area1onof",     CONFIG_TYPE_INT,    "0",            &config.area1onof,      NULL);
     register_config_parameter ("area2onof",     CONFIG_TYPE_INT,    "0",            &config.area2onof,      NULL);
     register_config_parameter ("area3onof",     CONFIG_TYPE_INT,    "0",            &config.area3onof,      NULL);

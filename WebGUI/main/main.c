@@ -19,13 +19,14 @@
 #include "esp_spiffs.h"
 #include "nvs_flash.h"
 #include "esp_netif.h"
-
+#include "driver/i2c.h"
 #include "freertos/FreeRTOS.h"
 #include "captdns.h"
 #include "neopixel.h"
 #include "led_strip.h"
 #include "gpio.h"
 #include "config.h"
+#include "rgb_sensor.h"
 
 
 static const char *TAG="main";
@@ -73,6 +74,11 @@ void app_main(void)
     ESP_ERROR_CHECK(init_neopixel());
     /*++++ init Neopixel driver ++++*/
     led_init();
+    /*+++ init I2C master ++++*/
+    i2c_master_init();
+    /*+++ init and enable RGB-Seonsors ++++*/
+    tcs34725_enable();
+    tcs34725_init();
     /* Initialize SPI filesystem, see spiffs.c  */
     ESP_ERROR_CHECK(init_spiffs());
 
