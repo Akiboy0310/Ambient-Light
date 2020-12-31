@@ -24,6 +24,18 @@ void i2c_master_init(){
 	printf("- i2c driver installed\r\n\r\n");
     
 }
+void i2c_TCA9548_init(uint8_t* Channel){
+    //enable the needed channels of the MUX
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    // first, send device address (indicating write) & register to be written
+    i2c_master_write_byte(cmd, ( TCA_ADDRESS << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+    // write the data
+    i2c_master_write(cmd, Channel, 1, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+    i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+}
 /**
  * @brief test code to read i2c slave device with registered interface
  * _______________________________________________________________________________________________________
@@ -95,8 +107,10 @@ esp_err_t wrtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count )
 {
 	return( i2c_master_write_slave_reg( I2C_PORT_NUM, TCS34725_ADDRESS,  reg, pdata, count ) );
 }
-void tcs34725_enable(){
+void tcs34725_enable(uint8_t channel){
   uint8_t value;
+  value=(channel);
+  i2c_TCA9548_init(&(value));
     // Select enable register(0x00)
 	  // Power ON, RGBC enable, wait time disable(0x03)
     value= (0x01);
@@ -105,8 +119,10 @@ void tcs34725_enable(){
     value= (0x03);
     wrtcs34725x( TCS34725_ENABLE,&(value),1);
 }
-void tcs34725_init(){
+void tcs34725_init(uint8_t channel){
   uint8_t value;
+  value=(channel);
+  i2c_TCA9548_init(&(value));
   // Select ALS time register(0x01)
 	  // Atime = 700 ms(0x00)
     value= (0x00);

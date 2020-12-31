@@ -76,9 +76,20 @@ void app_main(void)
     led_init();
     /*+++ init I2C master ++++*/
     i2c_master_init();
-    /*+++ init and enable RGB-Seonsors ++++*/
-    tcs34725_enable();
-    tcs34725_init();
+    /*+++ init and enable all 4 RGB-Seonsors ++++*/
+    uint8_t value;
+    value = Channel3; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
+    value = Channel2; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
+    value = Channel0; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
+    value = Channel1; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
     /* Initialize SPI filesystem, see spiffs.c  */
     ESP_ERROR_CHECK(init_spiffs());
 

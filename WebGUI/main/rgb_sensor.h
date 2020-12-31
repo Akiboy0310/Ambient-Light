@@ -1,10 +1,6 @@
 #ifndef _INC_RGB_H
 #define _INC_RGB_H
-
-#include "esp_log.h"
-#include "esp_err.h"
 #include "driver/i2c.h"
-
 #define SAMPLE_PERIOD_MS		200
 #define I2C_SCL_IO				21               /*!< gpio number for I2C master clock */
 #define I2C_SDA_IO				22               /*!< gpio number for I2C master data  */
@@ -13,7 +9,7 @@
 #define I2C_TX_BUF_DISABLE  	0                /*!< I2C master do not need buffer */
 #define I2C_RX_BUF_DISABLE  	0                /*!< I2C master do not need buffer */
 
-//I2C common protocol defines
+// I2C common protocol defines
 #define WRITE_BIT                          I2C_MASTER_WRITE /*!< I2C master write */
 #define READ_BIT                           I2C_MASTER_READ  /*!< I2C master read */
 #define ACK_CHECK_EN                       0x1              /*!< I2C master will check ack from slave*/
@@ -21,7 +17,12 @@
 #define ACK_VAL                            0x0              /*!< I2C ack value */
 #define NACK_VAL                           0x1              /*!< I2C nack value */
 
-// TCS34725 defines
+// TCS34725 & TCA9548 defines
+#define TCA_ADDRESS             0x70             /**<I2C address**/
+#define Channel0  	            0x01
+#define Channel1                0x02
+#define Channel2                0x04
+#define Channel3                0x08
 #define TCS34725_ADDRESS        0x29             /**< I2C address **/
 #define TCS34725_ENABLE         0x00             /**< Interrupt Enable register */
 #define TCS34725_ENABLE_AIEN    0x10             /**< RGBC Interrupt Enable */
@@ -45,13 +46,13 @@
 #define TCS34725_BDATAH         0x1B             /**< Blue channel data high byte */
 
 
-void i2c_master_init();
+extern void i2c_master_init();
+extern void i2c_TCA9548_init(uint8_t* Channel);
 extern esp_err_t i2c_master_read_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_rd, size_t size);
 extern esp_err_t i2c_master_write_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_wr, size_t size);
 extern esp_err_t rdtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count );
 extern esp_err_t wrtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count );
-extern void tcs34725_enable();
-extern void tcs34725_init();
-extern void tcs34725_1(float*r1, float*g1, float*b1);
-extern void tcs34725_2(float*r2, float*g2, float*b2);
+extern void tcs34725_enable(uint8_t channel);
+extern void tcs34725_init(uint8_t  channel);
+extern void tcs34725(float*r1, float*g1, float*b1);
 #endif

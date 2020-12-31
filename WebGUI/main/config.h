@@ -33,7 +33,7 @@ struct config_struct {
     int area4onof;
     int onof;
     int signal_mode;
-    int bridness;
+    int brightness;
     int gain;
     int frequency;
     int wifi_mode;

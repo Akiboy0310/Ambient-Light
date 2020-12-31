@@ -24,6 +24,18 @@ void i2c_master_init(){
 	printf("- i2c driver installed\r\n\r\n");
     
 }
+void i2c_TCA9548_init(uint8_t* Channel){
+    //enable the needed channels of the MUX
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    // first, send device address (indicating write) & register to be written
+    i2c_master_write_byte(cmd, ( TCA_ADDRESS << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+    // write the data
+    i2c_master_write(cmd, Channel, 1, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+    i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+}
 /**
  * @brief test code to read i2c slave device with registered interface
  * _______________________________________________________________________________________________________
@@ -95,8 +107,10 @@ esp_err_t wrtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count )
 {
 	return( i2c_master_write_slave_reg( I2C_PORT_NUM, TCS34725_ADDRESS,  reg, pdata, count ) );
 }
-void tcs34725_enable(){
+void tcs34725_enable(uint8_t channel){
   uint8_t value;
+  value=(channel);
+  i2c_TCA9548_init(&(value));
     // Select enable register(0x00)
 	  // Power ON, RGBC enable, wait time disable(0x03)
     value= (0x01);
@@ -105,8 +119,10 @@ void tcs34725_enable(){
     value= (0x03);
     wrtcs34725x( TCS34725_ENABLE,&(value),1);
 }
-void tcs34725_init(){
+void tcs34725_init(uint8_t channel){
   uint8_t value;
+  value=(channel);
+  i2c_TCA9548_init(&(value));
   // Select ALS time register(0x01)
 	  // Atime = 700 ms(0x00)
     value= (0x00);
@@ -116,7 +132,7 @@ void tcs34725_init(){
     value= (0x00);
     wrtcs34725x( TCS34725_CONTROL,&(value),1);
 }
-void tcs34725_1(uint8_t*r1, uint8_t*g1, uint8_t*b1){
+void tcs34725(uint8_t*r1, uint8_t*g1, uint8_t*b1){
     uint8_t rl=0;
     uint8_t gl=0;
     uint8_t bl=0;
@@ -139,42 +155,70 @@ void tcs34725_1(uint8_t*r1, uint8_t*g1, uint8_t*b1){
     *g1=(uint8_t)g;
     *b1=(uint8_t)b;
 }
-void tcs34725_2(uint8_t*r2, uint8_t*g2, uint8_t*b2){
-    uint8_t rl=0;
-    uint8_t gl=0;
-    uint8_t bl=0;
-    uint8_t rh=0;
-    uint8_t gh=0;
-    uint8_t bh=0;
-    uint16_t r;
-    uint16_t g;
-    uint16_t b;
-    rdtcs34725x( TCS34725_RDATAL,&rl,1);
-    rdtcs34725x( TCS34725_RDATAH,&rh,1);
-    rdtcs34725x( TCS34725_GDATAL,&gl,1);
-    rdtcs34725x( TCS34725_GDATAH,&gh,1);
-    rdtcs34725x( TCS34725_BDATAL,&bl,1);
-    rdtcs34725x( TCS34725_BDATAH,&bh,1);
-    r = ((uint16_t) rh << 8) | (uint16_t) rl;
-    g = ((uint16_t) gh << 8) | (uint16_t) gl;
-    b = ((uint16_t) bh << 8) | (uint16_t) bl;
-    *r2=rl;
-    *g2=gl;
-    *b2=bl;
-}
+
 
 void app_main(void){ 
     i2c_master_init();
-    tcs34725_enable();
-    tcs34725_init();
-    uint8_t r1, r2;
-    uint8_t g1, g2;
-    uint8_t b1, b2;
+    uint8_t value;
+    value = Channel3; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
+    value = Channel2; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
+    value = Channel0; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
+    value = Channel1; 
+    tcs34725_enable(value);
+    tcs34725_init(value);
+    
+    printf("scanning the bus...\r\n\r\n");
+	int devices_found = 0;
+	
+	for(int address = 1; address < 127; address++) {
+	
+		// create and execute the command link
+		i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+		i2c_master_start(cmd);
+		i2c_master_write_byte(cmd, (address << 1) | I2C_MASTER_WRITE, true);
+		i2c_master_stop(cmd);
+		if(i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_RATE_MS) == ESP_OK) {
+			printf("-> found device with address 0x%02x\r\n", address);
+			devices_found++;
+		}
+		i2c_cmd_link_delete(cmd);
+	}
+	if(devices_found == 0) printf("\r\n-> no devices found\r\n");
+	printf("\r\n...scan completed!\r\n");
+    uint8_t r1, r2,r3,r4;
+    uint8_t g1, g2,g3,g4;
+    uint8_t b1, b2,b3,b4;
     while(1){
-	  tcs34725_2(&r1, &g1, &b1);
+    value=(Channel0);
+    i2c_TCA9548_init(&(value));
+	tcs34725(&r1, &g1, &b1);
+    value=(Channel1);
+    i2c_TCA9548_init(&(value));
+	tcs34725(&r2, &g2, &b2);
+    value=(Channel2);
+    i2c_TCA9548_init(&(value));
+	tcs34725(&r3, &g3, &b3);
+    value=(Channel3);
+    i2c_TCA9548_init(&(value));
+	tcs34725(&r4, &g4, &b4);
     printf("red:%d\n", r1);
     printf("green :%d\n", g1);
-    printf("blue :%d\n", b1);
+    printf("blue :%d\n\n", b1);
+    printf("red:%d\n", r2);
+    printf("green :%d\n", g2);
+    printf("blue :%d\n\n", b2);
+     printf("red:%d\n", r3);
+    printf("green :%d\n", g3);
+    printf("blue :%d\n\n", b3);
+     printf("red:%d\n", r4);
+    printf("green :%d\n", g4);
+    printf("blue :%d\n\n", b4);
     vTaskDelay(800 / portTICK_RATE_MS);
   
     }

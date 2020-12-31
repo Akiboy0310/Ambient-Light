@@ -31,7 +31,7 @@ C.CONFIG_MAPPING.push({ guiId: 'AREA3ONOF',         cmd: 'area3onof',       valu
 C.CONFIG_MAPPING.push({ guiId: 'AREA4ONOF',         cmd: 'area4onof',       value: '0' });
 C.CONFIG_MAPPING.push({ guiId: 'ONOFBOX',           cmd: 'onof',            value: '0' }); 
 C.CONFIG_MAPPING.push({ guiId: 'SIGNAL_MODE_SELECT',cmd: 'signal_mode',     value: '1' });
-C.CONFIG_MAPPING.push({ guiId: 'BRIDNESS_SLIDER',   cmd: 'bridness',        value: '30' });
+C.CONFIG_MAPPING.push({ guiId: 'brightness_SLIDER',   cmd: 'brightness',        value: '30' });
 C.CONFIG_MAPPING.push({ guiId: 'GAIN_SLIDER',       cmd: 'gain',            value: '30' })
 C.CONFIG_MAPPING.push({ guiId: 'FREQUENCY_SLIDER',  cmd: 'frequency',       value: '20' });
 C.CONFIG_MAPPING.push({ guiId: 'WIFI_MODE_SELECT',  cmd: 'wifi_mode',       value: '1' });

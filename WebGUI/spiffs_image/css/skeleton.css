@@ -173,7 +173,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #topics{
   background-color:rgb(44, 62, 80);
-  height: 50px;
+  height: 40px;
 }
 #topics a{
   color: rgb(189, 195, 199);
@@ -192,7 +192,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
   background-color: aliceblue;
 }
 #menu a{
-  width: 32%;
+  width: 49%;
   font-size: x-large;
   display: inline-block;
   text-align: center;
@@ -206,7 +206,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 }
 #onofbox a{
   position: absolute;
-  left: 33%;
+  left: 20%;
   bottom: 1px;
   width: 50%;
   font-size: 175%;

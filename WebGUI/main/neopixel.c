@@ -44,7 +44,7 @@ uint8_t led_init(void){
   }
     return 0; 
 }
-void set_led_strip_color(uint8_t r,uint8_t g, uint8_t b,uint8_t area,float bridness){
+void set_led_strip_color(uint8_t r,uint8_t g, uint8_t b,uint8_t area,float brightness){
     /**
     * Funktion to set the color of the ledstrip. If area = 1 the first quarter will be set,
     * if area = 2 the second quarter etc.*/ 
@@ -55,7 +55,7 @@ void set_led_strip_color(uint8_t r,uint8_t g, uint8_t b,uint8_t area,float bridn
 
     for(uint8_t i = startLED; i<=endLED; i++)
     {
-        led_strip_set_pixel_rgb(&led_strip, i,r*bridness,g*bridness,b*bridness);
+        led_strip_set_pixel_rgb(&led_strip, i,r*brightness,g*brightness,b*brightness);
     }
 }
 int sendTaskRunning=0;
@@ -144,27 +144,39 @@ void sendTask(void *param)
 
 
     sendTaskRunning=1;
-    float r1, r2;
-    float g1, g2;
-    float b1, b2;
+    float r1, r2, r3,r4;
+    float g1, g2,g3,g4;
+    float b1, b2,b3,b4;
+    uint8_t value;
     int64_t timerTicks =  esp_timer_get_time();
     while (sendTaskRunning) {
-        float bridness = (float)config.frequency/100; // variable to set the bridness 
+        float brightness = (float)config.frequency/100; // variable to set the brightness 
         vTaskDelay(1);
         if (config.onof==1 && config.colorsensing==1)
         {
-            tcs34725_2(&r1, &g1, &b1);
-            set_led_strip_color(r1,g1,b1,1,bridness);
-            set_led_strip_color(r1,g1,b1,2,bridness);
-            set_led_strip_color(r1,g1,b1,3,bridness);
-            set_led_strip_color(r1,g1,b1,4,bridness);
+            value=(Channel0);
+            i2c_TCA9548_init(&(value));
+            tcs34725(&r1, &g1, &b1);
+            value=(Channel1);
+            i2c_TCA9548_init(&(value));
+            tcs34725(&r2, &g2, &b2);
+            value=(Channel2);
+            i2c_TCA9548_init(&(value));
+            tcs34725(&r3, &g3, &b3);
+            value=(Channel3);
+            i2c_TCA9548_init(&(value));
+            tcs34725(&r4, &g4, &b4);            
+            set_led_strip_color(r1,g1,b1,1,brightness);
+            set_led_strip_color(r2,g2,b2,2,brightness);
+            set_led_strip_color(r3,g3,b3,3,brightness);
+            set_led_strip_color(r4,g4,b4,4,brightness);
         }
         
         else if(config.onof==1||config.area1onof==1 ||config.area2onof==1 ||config.area3onof==1 || config.area4onof==1){
-            set_led_strip_color(config.red,config.green,config.blue,1,bridness);
-            set_led_strip_color(config.red,config.green,config.blue,2,bridness);
-            set_led_strip_color(config.red,config.green,config.blue,3,bridness);
-            set_led_strip_color(config.red,config.green,config.blue,4,bridness);
+            set_led_strip_color(config.red,config.green,config.blue,1,brightness);
+            set_led_strip_color(config.red,config.green,config.blue,2,brightness);
+            set_led_strip_color(config.red,config.green,config.blue,3,brightness);
+            set_led_strip_color(config.red,config.green,config.blue,4,brightness);
         }
         else {
             set_led_strip_color(0,0,0,1,0);

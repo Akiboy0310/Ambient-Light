@@ -15,7 +15,12 @@
 #define ACK_VAL                            0x0              /*!< I2C ack value */
 #define NACK_VAL                           0x1              /*!< I2C nack value */
 
-// TCS34725 defines
+// TCS34725 & TCA9548 defines
+#define TCA_ADDRESS             0x70             /**<I2C address**/
+#define Channel0  	            0x01
+#define Channel1                0x02
+#define Channel2                0x04
+#define Channel3                0x08
 #define TCS34725_ADDRESS        0x29             /**< I2C address **/
 #define TCS34725_ENABLE         0x00             /**< Interrupt Enable register */
 #define TCS34725_ENABLE_AIEN    0x10             /**< RGBC Interrupt Enable */
@@ -40,11 +45,11 @@
 
 
 extern void i2c_master_init();
+extern void i2c_TCA9548_init(uint8_t* Channel);
 extern esp_err_t i2c_master_read_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_rd, size_t size);
 extern esp_err_t i2c_master_write_slave_reg(i2c_port_t i2c_num, uint8_t i2c_addr, uint8_t i2c_reg, uint8_t* data_wr, size_t size);
 extern esp_err_t rdtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count );
 extern esp_err_t wrtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count );
-extern void tcs34725_enable();
-extern void tcs34725_init();
-void tcs34725_1(uint8_t*r1, uint8_t*g1, uint8_t*b1);
-void tcs34725_2(uint8_t*r2, uint8_t*g2, uint8_t*b2);
+extern void tcs34725_enable(uint8_t channel);
+extern void tcs34725_init(uint8_t  channel);
+void tcs34725(uint8_t*r, uint8_t*g, uint8_t*b);

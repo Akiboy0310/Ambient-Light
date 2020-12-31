@@ -60,7 +60,7 @@ esp_err_t init_config(void)
     register_config_parameter ("area4onof",     CONFIG_TYPE_INT,    "0",            &config.area4onof,      NULL);
     register_config_parameter ("onof",          CONFIG_TYPE_INT,    "0",            &config.onof,           NULL);
     register_config_parameter ("signal_mode",   CONFIG_TYPE_INT,    "1",            &config.signal_mode,    NULL);
-    register_config_parameter ("bridnesss",     CONFIG_TYPE_INT,    "30",           &config.bridness,       NULL);
+    register_config_parameter ("brightnesss",     CONFIG_TYPE_INT,    "30",           &config.brightness,       NULL);
     register_config_parameter ("gain",          CONFIG_TYPE_INT,    "30",           &config.gain,           NULL);
     register_config_parameter ("frequency",     CONFIG_TYPE_INT,    "20",           &config.frequency,      NULL);
     register_config_parameter ("wifi_mode",     CONFIG_TYPE_INT,    "1",            &config.wifi_mode,      NULL);
