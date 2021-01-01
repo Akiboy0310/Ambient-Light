@@ -132,7 +132,7 @@ void tcs34725_init(uint8_t channel){
     value= (0x00);
     wrtcs34725x( TCS34725_CONTROL,&(value),1);
 }
-void tcs34725_1(float*r1, float*g1, float*b1){
+void tcs34725(float*r1, float*g1, float*b1){
     uint8_t cl=0;
     uint8_t ch=0;
     uint8_t rl=0;
@@ -167,38 +167,4 @@ void tcs34725_1(float*r1, float*g1, float*b1){
     *g1 = (float)g / sum * 255.0;
     *b1 = (float)b / sum * 255.0;
 }
-void tcs34725_2(float*r2, float*g2, float*b2){
-    uint8_t cl=0;
-    uint8_t ch=0;
-    uint8_t rl=0;
-    uint8_t gl=0;
-    uint8_t bl=0;
-    uint8_t rh=0;
-    uint8_t gh=0;
-    uint8_t bh=0;
-    uint16_t r;
-    uint16_t g;
-    uint16_t b;
-    uint16_t c;
-    rdtcs34725x( TCS34725_RDATAL,&cl,1);
-    rdtcs34725x( TCS34725_RDATAH,&ch,1);
-    rdtcs34725x( TCS34725_RDATAL,&rl,1);
-    rdtcs34725x( TCS34725_RDATAH,&rh,1);
-    rdtcs34725x( TCS34725_GDATAL,&gl,1);
-    rdtcs34725x( TCS34725_GDATAH,&gh,1);
-    rdtcs34725x( TCS34725_BDATAL,&bl,1);
-    rdtcs34725x( TCS34725_BDATAH,&bh,1);
-    c = ((uint16_t) ch << 8) | (uint16_t) cl;
-    r = ((uint16_t) rh << 8) | (uint16_t) rl;
-    g = ((uint16_t) gh << 8) | (uint16_t) gl;
-    b = ((uint16_t) bh << 8) | (uint16_t) bl;
-    uint32_t sum = c;
-    // Avoid divide by zero errors ... if clear = 0 return black
-    if (c == 0) {
-        *r2 = *g2 = *b2 = 0;
-        return;
-    }
-    *r2 = (float)r / sum * 255.0;
-    *g2 = (float)g / sum * 255.0;
-    *b2 = (float)b / sum * 255.0;
-}
+
