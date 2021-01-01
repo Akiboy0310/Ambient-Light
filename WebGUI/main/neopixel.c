@@ -152,7 +152,7 @@ void sendTask(void *param)
     while (sendTaskRunning) {
         float bridness = (float)config.frequency/100; // variable to set the bridness 
         vTaskDelay(1);
-        if (config.onof==1 && config.colorsensing==1)
+        if ((config.onof==1 ||config.area1onof==1 ||config.area2onof==1 ||config.area3onof==1 || config.area4onof==1)&& config.colorsensing==1)
         {
             value=(Channel0);
             i2c_TCA9548_init(&(value));
@@ -177,6 +177,38 @@ void sendTask(void *param)
             set_led_strip_color(config.red,config.green,config.blue,2,bridness);
             set_led_strip_color(config.red,config.green,config.blue,3,bridness);
             set_led_strip_color(config.red,config.green,config.blue,4,bridness);
+            if (config.onof==1||config.area1onof==1)
+            {
+            set_led_strip_color(config.red,config.green,config.blue,1,bridness);
+            }
+            else
+            {
+            set_led_strip_color(0,0,0,1,0);
+            }
+            if (config.onof==1||config.area2onof==1)
+            {
+            set_led_strip_color(config.red,config.green,config.blue,2,bridness);
+            }
+            else
+            {
+            set_led_strip_color(0,0,0,2,0);
+            }
+            if (config.onof==1||config.area3onof==1)
+            {
+            set_led_strip_color(config.red,config.green,config.blue,3,bridness);
+            }
+            else
+            {
+            set_led_strip_color(0,0,0,3,0);
+            }
+            if (config.onof==1||config.area4onof==1)
+            {
+            set_led_strip_color(config.red,config.green,config.blue,4,bridness);
+            }
+            else
+            {
+            set_led_strip_color(0,0,0,4,0);
+            }
         }
         else {
             set_led_strip_color(0,0,0,1,0);
