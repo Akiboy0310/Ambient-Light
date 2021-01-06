@@ -120,6 +120,7 @@ void tcs34725_enable(uint8_t channel){
     wrtcs34725x( TCS34725_ENABLE,&(value),1);
 }
 void tcs34725_init(uint8_t channel){
+  //With channel the rgb sensor that schould be controled is chosen 
   uint8_t value;
   value=(channel);
   i2c_TCA9548_init(&(value));

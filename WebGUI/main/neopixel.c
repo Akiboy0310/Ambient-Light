@@ -150,7 +150,7 @@ void sendTask(void *param)
     uint8_t value;
     int64_t timerTicks =  esp_timer_get_time();
     while (sendTaskRunning) {
-        float bridness = (float)config.frequency/100; // variable to set the bridness 
+        float bridness = (float)config.brightness/100; // variable to set the bridness 
         vTaskDelay(1);
         if ((config.onof==1 ||config.area1onof==1 ||config.area2onof==1 ||config.area3onof==1 || config.area4onof==1)&& config.colorsensing==1)
         {

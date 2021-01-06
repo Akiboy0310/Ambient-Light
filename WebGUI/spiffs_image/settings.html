@@ -56,6 +56,19 @@
             <div class="one column show-mobile space-bottom-2x"></div>
         </div>
         <br>
+        <div id="topics">
+            <a>Save Changes</a>
+        </div>
+        <br>
+            <div class="row">
+                <button id="basic-button" onclick="actionAndToggle(esp32.save, [], ['#basic-button-normal', '#basic-button-saving'], '#save-basic-value-bar')" class="one-third" style="position: relative;">
+                    <i id="save-basic-value-bar" class="value-bar color-lightercyan" style="width: 0%;"></i>
+                    <span id="basic-button-normal" data-i18n>Save // Speichern</span>
+                    <span id="basic-button-saving" style="display: none;" data-i18n>Saving... // Wird
+                        gespeichert...
+                    </span>
+                </button>
+            </div>
         <script>
             window.onload = function () {
                 tabby.init();

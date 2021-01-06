@@ -101,12 +101,12 @@
         <br>        
         <div id="frequency-slider">
             <div class="row">
-                <label for="FREQUENCY_SLIDER"  style="color:rgb(44, 62, 80);" class="text-center one column offset-by-two" data-i18n>Brightness: // Brightness:</label>
+                <label for="Brightness_SLIDER"  style="color:rgb(44, 62, 80);" class="text-center one column offset-by-two" data-i18n>Brightness: // Brightness:</label>
             </div>
             <div class="row">
-                <span aria-hidden="true" id="FREQUENCY_SLIDER_VAL" class="text-center one column offset-by-two">0</span>
+                <span aria-hidden="true" id="Brightness_SLIDER_VAL" class="text-center one column offset-by-two">0</span>
                 <input type="range" oninput="sliderChanged(event)" onchange="sliderChanged(event)"
-                       id="FREQUENCY_SLIDER" min="0" max="100" class="seven columns" accesskey="s">
+                       id="Brightness_SLIDER" min="0" max="100" class="seven columns" accesskey="s">
             </div>
         </div>
             <br>
@@ -124,6 +124,20 @@
             <div style=display:none id = "green"><input type="text" id="GREEN"></div>
             <div style=display:none id = "blue"><input type="text" id="BLUE"></div>
         </div>
+        <br>
+        <div id="topics">
+            <a>Save Changes</a>
+        </div>
+        <br>
+            <div class="row">
+                <button id="basic-button" onclick="actionAndToggle(esp32.save, [], ['#basic-button-normal', '#basic-button-saving'], '#save-basic-value-bar')" class="one-third" style="position: relative;">
+                    <i id="save-basic-value-bar" class="value-bar color-lightercyan" style="width: 0%;"></i>
+                    <span id="basic-button-normal" data-i18n>Save // Speichern</span>
+                    <span id="basic-button-saving" style="display: none;" data-i18n>Saving... // Wird
+                        gespeichert...
+                    </span>
+                </button>
+            </div>
         <script>
             // Simple example, see optional options for more configuration.
             const pickr = Pickr.create({
