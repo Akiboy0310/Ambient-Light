@@ -51,8 +51,6 @@ void set_led_strip_color(uint8_t r,uint8_t g, uint8_t b,uint8_t area,float bridn
     uint8_t startLED = (area-1) * (LENGTH_OF_LED_STRIP / 4);
     uint8_t endLED = area * (LENGTH_OF_LED_STRIP / 4);
 
-    //ESP_LOGI("NP","Start: %d, %d", startLED,endLED);
-
     for(uint8_t i = startLED; i<=endLED; i++)
     {
         led_strip_set_pixel_rgb(&led_strip, i,r*bridness,g*bridness,b*bridness);

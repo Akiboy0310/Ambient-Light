@@ -132,28 +132,36 @@ void tcs34725_init(uint8_t channel){
     value= (0x00);
     wrtcs34725x( TCS34725_CONTROL,&(value),1);
 }
-void tcs34725(uint8_t*r1, uint8_t*g1, uint8_t*b1){
-    uint8_t rl=0;
-    uint8_t gl=0;
-    uint8_t bl=0;
-    uint8_t rh=0;
-    uint8_t gh=0;
-    uint8_t bh=0;
-    uint16_t r;
-    uint16_t g;
-    uint16_t b;
+void tcs34725(float*r1, float*g1, float*b1){
+    uint8_t cl,ch,rl,rh,gl,gh,bl,bh;
+    uint16_t r,g,b,c;
+    rdtcs34725x( TCS34725_CDATAL,&cl,1);
+    rdtcs34725x( TCS34725_CDATAH,&ch,1);
     rdtcs34725x( TCS34725_RDATAL,&rl,1);
     rdtcs34725x( TCS34725_RDATAH,&rh,1);
     rdtcs34725x( TCS34725_GDATAL,&gl,1);
     rdtcs34725x( TCS34725_GDATAH,&gh,1);
     rdtcs34725x( TCS34725_BDATAL,&bl,1);
     rdtcs34725x( TCS34725_BDATAH,&bh,1);
+    c = ((uint16_t) ch << 8) | (uint16_t) cl;
     r = ((uint16_t) rh << 8) | (uint16_t) rl;
     g = ((uint16_t) gh << 8) | (uint16_t) gl;
     b = ((uint16_t) bh << 8) | (uint16_t) bl;
-    *r1=(uint8_t)r;
-    *g1=(uint8_t)g;
-    *b1=(uint8_t)b;
+    uint32_t sum = c;
+    // Avoid divide by zero errors ... if clear = 0 return black
+    if (c == 0) {
+        *r1 = *g1 = *b1 = 0;
+        return;
+    }
+    *r1 = (float)r / sum * 255.0;
+    *g1 = (float)g / sum * 255.0;
+    *b1 = (float)b / sum * 255.0;
+
+    printf("Red%d\n",r);
+    printf("Green%d\n",g);
+    printf("Blue%d\n",b);
+    printf("Clear%d\n\n",c);
+
 }
 
 
@@ -191,14 +199,14 @@ void app_main(void){
 	}
 	if(devices_found == 0) printf("\r\n-> no devices found\r\n");
 	printf("\r\n...scan completed!\r\n");
-    uint8_t r1, r2,r3,r4;
-    uint8_t g1, g2,g3,g4;
-    uint8_t b1, b2,b3,b4;
+    float r1, r2,r3,r4;
+    float g1, g2,g3,g4;
+    float b1, b2,b3,b4;
     while(1){
     value=(Channel0);
     i2c_TCA9548_init(&(value));
 	tcs34725(&r1, &g1, &b1);
-    value=(Channel1);
+    /*value=(Channel1);
     i2c_TCA9548_init(&(value));
 	tcs34725(&r2, &g2, &b2);
     value=(Channel2);
@@ -206,11 +214,11 @@ void app_main(void){
 	tcs34725(&r3, &g3, &b3);
     value=(Channel3);
     i2c_TCA9548_init(&(value));
-	tcs34725(&r4, &g4, &b4);
-    printf("red:%d\n", r1);
-    printf("green :%d\n", g1);
-    printf("blue :%d\n\n", b1);
-    printf("red:%d\n", r2);
+	tcs34725(&r4, &g4, &b4);*/
+    printf("red:%f\n", r1);
+    printf("green :%f\n", g1);
+    printf("blue :%f\n\n", b1);
+    /*printf("red:%d\n", r2);
     printf("green :%d\n", g2);
     printf("blue :%d\n\n", b2);
      printf("red:%d\n", r3);
@@ -218,7 +226,7 @@ void app_main(void){
     printf("blue :%d\n\n", b3);
      printf("red:%d\n", r4);
     printf("green :%d\n", g4);
-    printf("blue :%d\n\n", b4);
+    printf("blue :%d\n\n", b4);*/
     vTaskDelay(800 / portTICK_RATE_MS);
   
     }

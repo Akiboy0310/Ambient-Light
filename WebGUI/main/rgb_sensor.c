@@ -134,20 +134,10 @@ void tcs34725_init(uint8_t channel){
     wrtcs34725x( TCS34725_CONTROL,&(value),1);
 }
 void tcs34725(float*r1, float*g1, float*b1){
-    uint8_t cl=0;
-    uint8_t ch=0;
-    uint8_t rl=0;
-    uint8_t gl=0;
-    uint8_t bl=0;
-    uint8_t rh=0;
-    uint8_t gh=0;
-    uint8_t bh=0;
-    uint16_t r;
-    uint16_t g;
-    uint16_t b;
-    uint16_t c;
-    rdtcs34725x( TCS34725_RDATAL,&cl,1);
-    rdtcs34725x( TCS34725_RDATAH,&ch,1);
+    uint8_t cl,ch,rl,rh,gl,gh,bl,bh;
+    uint16_t r,g,b,c;
+    rdtcs34725x( TCS34725_CDATAL,&cl,1);
+    rdtcs34725x( TCS34725_CDATAH,&ch,1);
     rdtcs34725x( TCS34725_RDATAL,&rl,1);
     rdtcs34725x( TCS34725_RDATAH,&rh,1);
     rdtcs34725x( TCS34725_GDATAL,&gl,1);

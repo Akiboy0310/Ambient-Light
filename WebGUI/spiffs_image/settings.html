@@ -38,7 +38,7 @@
             <input type="text" id="WIFI_NAME_TEXT" class="five columns" placeholder="new WiFi name"/>
             <div class="three columns">
                 <button onclick="applyValue('WIFI_NAME_TEXT', L('#WIFI_NAME_TEXT').value); showCheckmark(this);">
-                    <span data-i18n>Set // Setzen</span>
+                    <span data-i18n>Set // Set</span>
                     <span style="display: none">&#x2714;</span>
                 </button>
             </div>
@@ -49,7 +49,7 @@
             <input type="password" id="WIFI_PASSWORD_TEXT" class="five columns" placeholder="new WiFi password"/>
             <div class="three columns">
                 <button onclick="applyValue('WIFI_PASSWORD_TEXT', L('#WIFI_PASSWORD_TEXT').value); showCheckmark(this);">
-                    <span data-i18n>Set // Setzen</span>
+                    <span data-i18n>Set // Set</span>
                     <span style="display: none">&#x2714;</span>
                 </button>
             </div>
@@ -63,9 +63,9 @@
             <div class="row">
                 <button id="basic-button" onclick="actionAndToggle(esp32.save, [], ['#basic-button-normal', '#basic-button-saving'], '#save-basic-value-bar')" class="one-third" style="position: relative;">
                     <i id="save-basic-value-bar" class="value-bar color-lightercyan" style="width: 0%;"></i>
-                    <span id="basic-button-normal" data-i18n>Save // Speichern</span>
-                    <span id="basic-button-saving" style="display: none;" data-i18n>Saving... // Wird
-                        gespeichert...
+                    <span id="basic-button-normal" data-i18n>Save // Save</span>
+                    <span id="basic-button-saving" style="display: none;" data-i18n>Saving... // Is
+                        saving...
                     </span>
                 </button>
             </div>

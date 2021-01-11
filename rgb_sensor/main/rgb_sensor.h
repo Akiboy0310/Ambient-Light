@@ -52,4 +52,4 @@ extern esp_err_t rdtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count );
 extern esp_err_t wrtcs34725x( uint8_t reg, uint8_t *pdata, uint8_t count );
 extern void tcs34725_enable(uint8_t channel);
 extern void tcs34725_init(uint8_t  channel);
-void tcs34725(uint8_t*r, uint8_t*g, uint8_t*b);
+void tcs34725(float*r1, float*g1, float*b1);
